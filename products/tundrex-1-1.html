@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tundrex 1.1 — Bacillus Subtilis Probiotic | Tundrex</title>
+  <meta name="description" content="Tundrex 1.1 delivers potent Bacillus subtilis sourced from pristine Siberian tundra soil — active in the small intestine to support gut health, immunity, and microbiome balance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Product Detail Page Styles */
+    .product-hero {
+      background: var(--bg-green);
+      padding: 120px 0 80px;
+      border-bottom: 1px solid rgba(90,158,56,0.15);
+    }
+    .product-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .product-hero-images {
+      position: relative;
+    }
+    .product-hero-main-img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 20px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    }
+    .product-hero-thumb-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .product-hero-thumb {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 10px;
+      border: 1.5px solid rgba(90,158,56,0.3);
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      transition: border-color 0.2s;
+      padding: 8px;
+    }
+    .product-hero-thumb:hover, .product-hero-thumb.active {
+      border-color: var(--frost-light);
+    }
+    .product-hero-info .product-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--frost-light);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .product-hero-info h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .product-hero-info .product-subtitle {
+      font-size: 1rem;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .product-price-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .product-price-big {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .product-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .product-cta-group .btn-primary {
+      text-align: center;
+      font-size: 1rem;
+      padding: 16px 32px;
+    }
+    .product-trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      background: rgba(90,158,56,0.08);
+      border: 1px solid rgba(90,158,56,0.2);
+      border-radius: 100px;
+      padding: 5px 12px;
+    }
+    .trust-pill svg { flex-shrink: 0; }
+
+    /* Description section */
+    .product-desc-section {
+      background: var(--bg-grey);
+      padding: 80px 0;
+    }
+    .product-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .product-desc-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .product-desc-section p {
+      color: var(--text-dark-sub);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .benefit-list {
+      list-style: none;
+      padding: 0;
+    }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text-dark-sub);
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .benefit-list li::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: var(--brand-green);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 12px;
+      margin-top: 2px;
+    }
+    .ingredients-box {
+      background: white;
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .ingredients-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+    .ingredients-box p, .ingredients-box li {
+      font-size: 0.85rem;
+      color: var(--text-dark-sub);
+    }
+    .allergy-note {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: #7a6020;
+      margin-top: 16px;
+    }
+
+    /* Directions section */
+    .directions-section {
+      background: var(--bg-green);
+      padding: 80px 0;
+    }
+    .directions-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .directions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .direction-step {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(90,158,56,0.2);
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .direction-step-num {
+      width: 44px;
+      height: 44px;
+      background: rgba(90,158,56,0.12);
+      border: 1.5px solid rgba(90,158,56,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--frost-light);
+      margin: 0 auto 16px;
+    }
+    .direction-step h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .direction-step p {
+      font-size: 0.83rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+    .directions-note {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      border-top: 1px solid rgba(90,158,56,0.15);
+      padding-top: 28px;
+    }
+
+    /* Protocols section */
+    .protocols-section {
+      background: var(--bg-grey);
+      padding: 80px 0;
+    }
+    .protocols-section .section-header {
+      margin-bottom: 48px;
+    }
+    .protocols-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .protocols-section .sub {
+      color: var(--text-dark-sub);
+      font-size: 0.95rem;
+    }
+    .protocol-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .protocol-card-sm {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .protocol-card-sm:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .protocol-card-sm-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .protocol-card-sm-body {
+      padding: 20px;
+    }
+    .protocol-card-sm-body h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .protocol-card-sm-body p {
+      font-size: 0.83rem;
+      color: var(--text-dark-sub);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .protocol-card-sm-body .proto-price {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--brand-green);
+    }
+    .protocol-card-sm-body .proto-learn {
+      font-size: 0.8rem;
+      color: var(--brand-green);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    /* FAQ section */
+    .faq-section {
+      background: var(--bg-green);
+      padding: 80px 0;
+    }
+    .faq-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(90,158,56,0.2);
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--white);
+      gap: 20px;
+    }
+    .faq-question:hover { color: var(--frost-light); }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border: 1.5px solid rgba(90,158,56,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: transform 0.3s, background 0.2s;
+      color: var(--frost-light);
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(90,158,56,0.1);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+    .faq-answer-inner { padding-bottom: 20px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .product-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .product-content-grid { grid-template-columns: 1fr; gap: 40px; }
+      .protocol-cards-grid { grid-template-columns: 1fr; }
+      .product-hero { padding: 100px 0 60px; }
+    }
+    @media (max-width: 640px) {
+      .directions-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class='nav-logo' href='/'><img src="../images/logo-white.png" alt="Tundrex" /></a>
+        <ul class="nav-links">
+          <li><a href='/products' style='color:var(--frost-blue)'>Shop</a></li>
+          <li><a href='/#science'>Science</a>
+    <a href='/blog'>Blog</a></li>
+          <li><a href='/blog'>Blog</a></li>
+          <li><a href='/contact'>Contact</a></li>
+          <li><a class='nav-cta btn' href='/products'>Shop Now</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="mobileNav">
+    <button class="nav-mobile-close" id="mobileClose">✕</button>
+    <img src="../images/logo-white.png" alt="Tundrex" style="height:36px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1);opacity:0.9;" />
+    <a href='/'>Home</a>
+    <a href='/products'>Shop All</a>
+    <a href='/#science'>Science</a>
+    <a href='/blog'>Blog</a>
+    <a href='/contact'>Contact</a>
+  </div>
+
+  <!-- PRODUCT HERO -->
+  <section class="product-hero">
+    <div class="container">
+      <div class="product-hero-inner">
+        <div class="product-hero-images fade-in">
+          <img src="../images/tundrex-1-1.png" alt="Tundrex 1.1 — Bacillus Subtilis Probiotic" class="product-hero-main-img" id="mainProductImg" />
+          <div class="product-hero-thumb-row">
+            <img src="../images/tundrex-1-1.png" alt="Tundrex 1.1 Box" class="product-hero-thumb active" onclick="switchImg(this, '../images/tundrex-1-1.png')" />
+            <img src="../images/tundrex-1-1-blisters.png" alt="Tundrex 1.1 Blisters" class="product-hero-thumb" onclick="switchImg(this, '../images/tundrex-1-1-blisters.png')" />
+          </div>
+        </div>
+        <div class="product-hero-info fade-up">
+          <span class="product-tag">Tundrex Probiotic Family</span>
+          <h1>Tundrex 1.1</h1>
+          <p class="product-subtitle">
+            The foundational Tundrex probiotic — delivering potent <em>Bacillus subtilis</em> sourced from pristine Siberian tundra soil. Active in the <strong>small intestine</strong>, where it helps support microbiome balance and immune function.
+          </p>
+          <div class="product-price-row">
+            <span class="product-price-big">$44.99</span>
+            <span style="font-size:0.82rem;color:var(--text-muted);">/ 50 capsules (10-day supply)</span>
+          </div>
+          <div class="product-cta-group">
+            <a href="https://tundrex.co/products/tundrex" target="_blank" rel="noopener" class="btn btn-primary">
+              Buy on Tundrex.co
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="product-trust-pills">
+            <span class="trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              30-Day Guarantee
+            </span>
+            <span class="trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0118 9h1a8 8 0 01-8 11z"/><path d="M5 12a7 7 0 014-6.3"/></svg>
+              Certified Organic
+            </span>
+            <span class="trust-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Doctor Endorsed
+            </span>
+            <span class="trust-pill">No Refrigeration Required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION + INGREDIENTS -->
+  <section class="product-desc-section">
+    <div class="container">
+      <div class="product-content-grid">
+        <div class="fade-up">
+          <h2>About Tundrex 1.1</h2>
+          <p>
+            Tundrex 1.1 is the core product in the Tundrex family — a spore-forming probiotic supplement featuring <em>Bacillus subtilis</em>, a highly resilient strain of bacteria sourced from untouched organic tundra soil in Siberia. Unlike many conventional probiotics, Tundrex 1.1 survives the harsh journey through stomach acid to deliver active bacteria directly where needed in the digestive tract.
+          </p>
+          <p>
+            Its spore-forming nature means it remains stable at room temperature for up to two years — no refrigeration required. Each 50-capsule box provides a complete 10-day course, recommended every 3–4 months for ongoing immune and gut support.
+          </p>
+          <h3 style="font-family:var(--font-serif);font-size:1.15rem;color:var(--text-dark);margin:24px 0 12px;">Key Benefits</h3>
+          <ul class="benefit-list">
+            <li>Supports healthy gut microbiome balance</li>
+            <li>Active in the small intestine — where most digestion and nutrient absorption occurs</li>
+            <li>Spore-forming bacteria with high survivability through the digestive system</li>
+            <li>May help support immune system function</li>
+            <li>May help reduce bloating and digestive discomfort</li>
+            <li>Stable at room temperature — no refrigeration needed</li>
+            <li>Sourced from pure, organic Siberian tundra soil</li>
+            <li>Free from artificial dyes, preservatives, and fillers</li>
+          </ul>
+        </div>
+        <div class="fade-up delay-1">
+          <div class="ingredients-box">
+            <h3>Supplement Facts</h3>
+            <p style="margin-bottom:12px;"><strong>Active Ingredient:</strong> <em>Bacillus subtilis</em> (sourced from organic Siberian tundra soil)</p>
+            <p style="margin-bottom:12px;"><strong>Serving Size:</strong> 5 capsules</p>
+            <p style="margin-bottom:12px;"><strong>Servings per Box:</strong> 10</p>
+            <p style="margin-bottom:12px;"><strong>Shelf Life:</strong> 2 years at room temperature</p>
+            <div class="allergy-note">
+              <strong>⚠ Allergy Warning:</strong> Contains small amounts of corn, potato, and sugar. Each capsule contains 67 mg of sugar (added by the manufacturer to ensure a 2-year shelf life at room temperature). Consuming one full 50-capsule box over 5–10 days adds less than a teaspoon of sugar to your diet. If you have a known allergy to corn, potato, or sugar, please consult your healthcare provider before use.
+            </div>
+            <p style="font-size:0.75rem;color:#888;margin-top:14px;">* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+          </div>
+          <div style="background:rgba(57,87,36,0.07);border:1px solid rgba(57,87,36,0.18);border-radius:14px;padding:24px;margin-top:20px;">
+            <h3 style="font-family:var(--font-serif);font-size:1rem;color:var(--text-dark);margin-bottom:12px;">Tundrex 1.1 in the Product Family</h3>
+            <p style="font-size:0.83rem;color:var(--text-dark-sub);line-height:1.6;margin-bottom:0;">
+              Tundrex 1.1 (<em>Bacillus subtilis</em>) is active in the <strong>small intestine</strong>. It works in synergy with <a href='/products/tundrex-3' style='color:var(--brand-green);font-weight:600;'>Tundrex 3</a> (active in the large intestine) and <a href='/products/tundrex-4' style='color:var(--brand-green);font-weight:600;'>Tundrex 4</a> (active in the small intestine) as part of comprehensive protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTIONS -->
+  <section class="directions-section">
+    <div class="container">
+      <h2>How to Take Tundrex 1.1</h2>
+      <div class="directions-grid">
+        <div class="direction-step fade-up delay-1">
+          <div class="direction-step-num">1</div>
+          <h4>Take with Food</h4>
+          <p>Take Tundrex with a meal for best results. It is a food supplement — not a medication — so no specific timing is required.</p>
+        </div>
+        <div class="direction-step fade-up delay-2">
+          <div class="direction-step-num">2</div>
+          <h4>5 Capsules Per Day</h4>
+          <p>Take 5 capsules per day for 10 days. For optimal results, space them evenly: one capsule approximately every 4 hours.</p>
+        </div>
+        <div class="direction-step fade-up delay-3">
+          <div class="direction-step-num">3</div>
+          <h4>Suggested Schedule</h4>
+          <p>Example: 7 am, 11 am, 3 pm, 7 pm, 11 pm — or create your own schedule. Continuous intake throughout the day is advisable, but not required.</p>
+        </div>
+        <div class="direction-step fade-up delay-4">
+          <div class="direction-step-num">4</div>
+          <h4>Repeat Every 3–4 Months</h4>
+          <p>Repeat the course every 3–4 months to maintain maximum immune and microbiome support.</p>
+        </div>
+      </div>
+      <div class="directions-note fade-up">
+        <strong>Important:</strong> Do not take Tundrex while on antibiotics — the antibiotic will neutralize the probiotic bacteria, reducing effectiveness. There is no health risk, but wait until your antibiotic course is complete. As a natural supplement, Tundrex has no known side effects and no reported cases of overdose.
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDED PROTOCOLS -->
+  <section class="protocols-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag" style="color:var(--brand-green);">Recommended Protocols</span>
+        <h2>Tundrex 1.1 Is the Foundation</h2>
+        <p class="sub">Tundrex 1.1 is used in every protocol. Choose the one that matches your health goals.</p>
+      </div>
+      <div class="protocol-cards-grid">
+        <a class='protocol-card-sm fade-up delay-1' href='/protocols/immunity-boost'>
+          <img src="../images/protocol-immunity-main.png" alt="Immunity Boost Protocol" class="protocol-card-sm-img" />
+          <div class="protocol-card-sm-body">
+            <h4>Immunity Boost</h4>
+            <p>The entry-level protocol — one box of Tundrex 1.1 for daily immune system support. Repeat every 3–4 months.</p>
+            <div class="proto-price">$44.99</div>
+            <span class="proto-learn">Learn more →</span>
+          </div>
+        </a>
+        <a class='protocol-card-sm fade-up delay-2' href='/protocols/microbiome-recovery'>
+          <img src="../images/protocol-microbiome-main.png" alt="Microbiome Recovery Protocol" class="protocol-card-sm-img" />
+          <div class="protocol-card-sm-body">
+            <h4>Microbiome Recovery</h4>
+            <p>A 20-day intensive protocol with Tundrex 1.1 + Tundrex 3 to restore disrupted microbiome balance. Save 10%.</p>
+            <div class="proto-price">$119.97 <span style="font-size:0.78rem;font-weight:400;color:#888;">was $134.97</span></div>
+            <span class="proto-learn">Learn more →</span>
+          </div>
+        </a>
+        <a class='protocol-card-sm fade-up delay-3' href='/protocols/return-to-well-being'>
+          <img src="../images/protocol-wellbeing-main.png" alt="Return to Well-Being Protocol" class="protocol-card-sm-img" />
+          <div class="protocol-card-sm-body">
+            <h4>Return to Well-Being</h4>
+            <p>A comprehensive 35-day protocol with Tundrex 1.1, 3, and 4 for full microbiome restoration. Save $25.</p>
+            <div class="proto-price">$199.95 <span style="font-size:0.78rem;font-weight:400;color:#888;">was $224.95</span></div>
+            <span class="proto-learn">Learn more →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="fade-up">Frequently Asked Questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is Tundrex 1.1?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Tundrex 1.1 is a probiotic food supplement containing <em>Bacillus subtilis</em> — a spore-forming strain of beneficial bacteria sourced from pristine organic tundra soil in Siberia. It is active in the small intestine and helps support gut microbiome balance and immune function.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How is Tundrex 1.1 different from other probiotics?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Tundrex 1.1 features <em>Bacillus subtilis</em> — a spore-forming strain that is significantly more resilient than common Lactobacillus strains found in most probiotics. It survives stomach acid, requires no refrigeration, and is sourced exclusively from pure Siberian tundra soil rather than lab-cultivated or dairy-based strains.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Can I take Tundrex 1.1 with antibiotics?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">It is best to avoid taking Tundrex 1.1 simultaneously with antibiotics. While there is no health risk, antibiotics will kill the probiotic bacteria, reducing effectiveness. We recommend completing your antibiotic course before beginning a Tundrex regimen — or starting Tundrex once antibiotics are finished. The Microbiome Recovery Protocol is specifically designed for post-antibiotic recovery.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Does Tundrex 1.1 need to be refrigerated?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">No. Tundrex 1.1 is a spore-forming probiotic, which means it remains stable and viable at room temperature for up to 2 years. No refrigeration is required.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Are there any side effects?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">As a natural probiotic supplement, Tundrex 1.1 has no known side effects and no reported cases of overdose. It is a food supplement, not a medication. If you have specific health concerns, consult with your healthcare provider before use. Note that the product contains small amounts of corn, potato, and sugar.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How often should I take Tundrex 1.1?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">For general immune and gut support, one course (50 capsules over 10 days) every 3–4 months is recommended. This is the Immunity Boost protocol. For deeper microbiome restoration, consider the Microbiome Recovery or Return to Well-Being protocols.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What is the difference between Tundrex 1.1, 3, and 4?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Tundrex 1.1 delivers <em>Bacillus subtilis</em> and is active in the small intestine. Tundrex 3 delivers <em>Bacillus amyloliquefaciens</em> and is active in the large intestine. Tundrex 4 delivers <em>Bacillus amyloliquefaciens</em> and is active in the small intestine. Together, they complement each other across the full digestive tract and are used in combination within the advanced protocols.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CUSTOMER REVIEWS -->
+  <section class="reviews-section bg-grey" id="reviews">
+    <div class="container">
+      <div class="section-header fade-up" style="margin-bottom:0;">
+        <span class="section-tag" style="color:var(--brand-green);">Customer Reviews</span>
+        <h2 style="font-family:var(--font-serif);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;color:var(--text-dark);margin-bottom:10px;">What Customers Are Saying</h2>
+        <p style="font-size:0.92rem;color:var(--text-dark-sub);max-width:520px;margin:0 auto;line-height:1.65;">Verified buyers share their experiences with Tundrex 1.1.</p>
+      </div>
+
+      <div class="reviews-carousel-wrap fade-up">
+        <button class="carousel-arrow carousel-arrow-left" id="p1RevPrev" aria-label="Previous reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="reviews-track" id="p1RevTrack">
+          
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Started with the Immunity Boost protocol — one box of Tundrex 1.1 over 10 days. I've now done it four times, once per quarter. My immune system has been noticeably stronger. I went through an entire winter without getting sick, which never happens."</p>
+              <div class="review-author">
+                <span class="review-name">Anne R.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"The small intestine targeting is what sold me. I have a history of upper digestive issues — bloating right after eating, cramping, the works. Tundrex 1.1 addressed exactly that. Three courses in and it's night and day."</p>
+              <div class="review-author">
+                <span class="review-name">Michael B.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Post-antibiotic recovery is where this really shines. Finished a course of antibiotics and started Tundrex 1.1 the next day. My gut bounced back in about two weeks instead of the two months it usually takes."</p>
+              <div class="review-author">
+                <span class="review-name">Diane F.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I appreciate that this isn't some fancy 50-strain blend with a lot of marketing behind it. It's one well-researched organism, sourced cleanly, in the right dose. Simple, effective, and the science actually checks out."</p>
+              <div class="review-author">
+                <span class="review-name">Greg N.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"The energy improvement surprised me most. I didn't expect that from a probiotic, but it makes sense given the gut-brain connection. About a week into my first course I noticed I wasn't hitting that 2pm wall anymore."</p>
+              <div class="review-author">
+                <span class="review-name">Priya S.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+        </div>
+        <button class="carousel-arrow carousel-arrow-right" id="p1RevNext" aria-label="Next reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <div class="carousel-dots" id="p1RevDots"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="../images/logo-white.png" alt="Tundrex" /></div>
+          <p>The world's finest probiotic — <em>Bacillus subtilis</em> sourced from pristine Siberian tundra soil. Evolved by nature. Unearthed for you.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href='/products/tundrex-1-1' style='color:var(--frost-light)'>Tundrex 1.1</a></li>
+            <li><a href='/products/tundrex-3'>Tundrex 3</a></li>
+            <li><a href='/products/tundrex-4'>Tundrex 4</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Protocols</h4>
+          <ul>
+            <li><a href='/protocols/immunity-boost'>Immunity Boost</a></li>
+            <li><a href='/protocols/microbiome-recovery'>Microbiome Recovery</a></li>
+            <li><a href='/protocols/return-to-well-being'>Return to Well-Being</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href='/#science'>The Science</a></li>
+            <li><a href='/contact'>Contact Us</a></li>
+            <li><a href='/products'>Shop All</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Tundrex. All rights reserved.</p>
+        <p class="footer-disclaimer">* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your healthcare provider before starting any new supplement.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function switchImg(thumb, src) {
+      document.getElementById('mainProductImg').src = src;
+      document.querySelectorAll('.product-hero-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+      // close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+  </script>
+
+  <script>
+    // ── Reviews Carousel: p1Rev ──────────────────────────────
+    (function () {
+      const track  = document.getElementById('p1RevTrack');
+      const prev   = document.getElementById('p1RevPrev');
+      const next   = document.getElementById('p1RevNext');
+      const dotsEl = document.getElementById('p1RevDots');
+      if (!track) return;
+      const cards      = Array.from(track.querySelectorAll('.review-card'));
+      const perPage    = () => window.innerWidth <= 600 ? 1 : (window.innerWidth <= 900 ? 2 : 3);
+      const totalPages = () => Math.ceil(cards.length / perPage());
+      let   currentPage = 0;
+      function buildDots() {
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < totalPages(); i++) {
+          const d = document.createElement('span');
+          d.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(d);
+        }
+      }
+      function updateDots() { Array.from(dotsEl.children).forEach((d, i) => d.classList.toggle('active', i === currentPage)); }
+      function updateArrows() { prev.disabled = currentPage === 0; next.disabled = currentPage >= totalPages() - 1; }
+      function goTo(page) {
+        currentPage = Math.max(0, Math.min(page, totalPages() - 1));
+        const gap = 20;
+        const cardW = cards[0].offsetWidth + gap;
+        track.scrollTo({ left: currentPage * perPage() * cardW, behavior: 'smooth' });
+        updateDots(); updateArrows();
+      }
+      prev.addEventListener('click', () => goTo(currentPage - 1));
+      next.addEventListener('click', () => goTo(currentPage + 1));
+      track.addEventListener('scroll', () => {
+        const cardW = cards[0].offsetWidth + 20;
+        const pp = perPage();
+        currentPage = Math.round(track.scrollLeft / (pp * cardW));
+        updateDots(); updateArrows();
+      }, { passive: true });
+      let rt;
+      window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { buildDots(); goTo(0); }, 150); });
+      buildDots(); updateArrows();
+    })();
+  </script>
+</body>
+</html>

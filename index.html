@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tundrex — The Best Kept Secret in Probiotics</title>
+  <meta name="description" content="Tundrex delivers the world's most potent probiotic — Bacillus subtilis sourced from pristine Siberian tundra soil. Gut health, immunity, and mental clarity evolved by nature." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Hero inline overrides for immediate render */
+    .hero-content > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class='nav-logo' href='/'>
+          <img src="images/logo-white.png" alt="Tundrex" />
+        </a>
+        <ul class="nav-links">
+          <li><a href='/products'>Shop</a></li>
+          <li><a href="#science">Science</a></li>
+          <li><a href='/blog'>Blog</a></li>
+          <li><a href='/contact'>Contact</a></li>
+          <li><a class='nav-cta btn' href='/products'>Shop Now</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="nav-mobile" id="mobileNav">
+    <button class="nav-mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <img src="images/logo-white.png" alt="Tundrex" style="height:36px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1);opacity:0.9;" />
+    <a href='/'>Home</a>
+    <a href='/products'>Shop All</a>
+    <a href='/products#individual-products'>Products</a>
+    <a href='/products#protocols'>Protocols</a>
+    <a href="#science">Science</a>
+    <a href='/blog'>Blog</a>
+    <a href='/contact'>Contact</a>
+    <a href='/products' style='color: var(--frost-blue); font-size: 1.2rem;'>Shop Now →</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-aurora">
+      <div class="aurora-1"></div>
+      <div class="aurora-2"></div>
+      <div class="aurora-3"></div>
+    </div>
+    <div class="hero-particles"></div>
+
+    <div class="container" style="position:relative;z-index:2;width:100%;">
+      <div class="hero-content" id="heroContent">
+        <div class="hero-badge hero-animate">
+          <span class="hero-badge-dot"></span>
+          The Best Kept Secret in Probiotics
+        </div>
+
+        <h1 class="hero-title hero-animate">
+          A Probiotic<br/>
+          <em>Evolved by Nature,</em><br/>
+          Unearthed by Man.
+        </h1>
+
+        <p class="hero-tagline hero-animate">
+          — Sourced from the Pristine Siberian Tundra —
+        </p>
+
+        <p class="hero-sub hero-animate">
+          Deep beneath the untouched organic soils of Siberia lives one of nature's most powerful organisms.
+          Tundrex harnesses <em>Bacillus subtilis</em> — a probiotic strain of extraordinary potency — 
+          to transform your gut, immunity, and vitality from within.
+        </p>
+
+        <div class="hero-ctas hero-animate">
+          <a class='btn btn-primary' href='/products'>
+            Shop Now
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#science" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ===================== AS SEEN IN MARQUEE ===================== -->
+  <div class="marquee-bar">
+    <div class="marquee-inner">
+      <div class="marquee-label">As seen in</div>
+      <div class="marquee-track-wrap">
+        <div class="marquee-track">
+          <!-- Set 1 -->
+          <img src="images/USA-Today-logo-white.webp" alt="USA Today" class="marquee-logo" />
+          <img src="images/mensJournal.png" alt="Men's Journal" class="marquee-logo" />
+          <img src="images/DrHyman.webp" alt="Dr. Mark Hyman" class="marquee-logo" />
+          <img src="images/Womensworldwhite.webp" alt="Women's World" class="marquee-logo" />
+          <img src="images/DrFarmacy.webp" alt="Dr. Farmacy" class="marquee-logo" />
+          <img src="images/Oklogo.webp" alt="OK Magazine" class="marquee-logo" />
+          <!-- Set 2 — duplicate for seamless loop -->
+          <img src="images/USA-Today-logo-white.webp" alt="" class="marquee-logo" aria-hidden="true" />
+          <img src="images/mensJournal.png" alt="" class="marquee-logo" aria-hidden="true" />
+          <img src="images/DrHyman.webp" alt="" class="marquee-logo" aria-hidden="true" />
+          <img src="images/Womensworldwhite.webp" alt="" class="marquee-logo" aria-hidden="true" />
+          <img src="images/DrFarmacy.webp" alt="" class="marquee-logo" aria-hidden="true" />
+          <img src="images/Oklogo.webp" alt="" class="marquee-logo" aria-hidden="true" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </span>
+          <span>Siberian Soil Sourced</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </span>
+          <span>Science-Backed Formula</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <span>Doctor Endorsed</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 0v20M2 12h20"/></svg>
+          </span>
+          <span>Certified Organic</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span>30-Day Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== WHY TUNDREX ===================== -->
+  <section class="why-section bg-grey" id="science">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Why Tundrex</span>
+        <h2 class="section-title">Nature's Most Potent Probiotic,<br/>Delivered to You</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Not all probiotics are equal. Tundrex goes deeper — sourcing strains that evolved to survive 
+          extreme conditions, making them exponentially more resilient and effective in your body.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card fade-up delay-1">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 18 12 4 21 18"/><line x1="3" y1="18" x2="21" y2="18"/><line x1="8" y1="12" x2="12" y2="8"/><line x1="12" y1="8" x2="16" y2="12"/></svg>
+          </div>
+          <h3>Siberian Soil Sourced</h3>
+          <p>Our <em>Bacillus subtilis</em> strains are extracted from pristine organic tundra soil in Siberia — one of the most untouched, mineral-rich environments on Earth.</p>
+        </div>
+        <div class="why-card fade-up delay-2">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Higher CFU Count</h3>
+          <p>Each capsule delivers a higher concentration of viable, spore-forming bacteria than conventional probiotics — surviving stomach acid to colonize where it matters.</p>
+        </div>
+        <div class="why-card fade-up delay-3">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Doctor Endorsed</h3>
+          <p>Trusted by Dr. Leo Galland, MD — a leading integrative medicine physician in New York — who considers <em>Bacillus subtilis</em> the finest probiotic organism he's worked with.</p>
+        </div>
+        <div class="why-card fade-up delay-4">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0118 9h1a8 8 0 01-8 11z"/><path d="M5 12a7 7 0 014-6.3"/><line x1="2" y1="22" x2="11" y2="13"/></svg>
+          </div>
+          <h3>Organic &amp; Pure</h3>
+          <p>No fillers, no artificial additives. Every batch is sourced from certified organic tundra soil, free from pesticides, heavy metals, and contaminants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY BACILLUS SUBTILIS ===================== -->
+  <section class="bg-green" style="padding:80px 0;" id="bacillus-subtilis">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">The Science</span>
+        <h2 class="section-title">Why <em>Bacillus subtilis</em>?</h2>
+        <p class="section-subtitle">
+          Not all probiotic strains are created equal. <em>Bacillus subtilis</em> stands apart — a spore-forming 
+          organism with remarkable resilience, studied extensively for its role in gut and immune health.
+        </p>
+      </div>
+
+      <div class="why-grid" style="margin-bottom:64px;">
+        <div class="why-card fade-up delay-1">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Gut Microbiome Support</h3>
+          <p><em>Bacillus subtilis</em> has been described as an "Alexander organism" — a leader that can help organize and restore balance within the complex gut microbiome community, particularly following disruption.</p>
+        </div>
+        <div class="why-card fade-up delay-2">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Immune System Support</h3>
+          <p>Research suggests <em>Bacillus subtilis</em> may help modulate immune function by interacting with gut-associated lymphoid tissue (GALT) — the immune network that lines the digestive tract and accounts for a significant portion of the body's immune activity.</p>
+        </div>
+        <div class="why-card fade-up delay-3">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M8 9V7a4 4 0 018 0v2"/></svg>
+          </div>
+          <h3>Digestive Support</h3>
+          <p>Studies indicate <em>Bacillus subtilis</em> may help support digestive function through the production of short-chain fatty acids (SCFAs), which play a role in maintaining the intestinal lining and supporting healthy gut motility and comfort.</p>
+        </div>
+        <div class="why-card fade-up delay-4">
+          <div class="why-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Spore-Forming Resilience</h3>
+          <p>Unlike fragile Lactobacillus strains, <em>Bacillus subtilis</em> forms spores that survive harsh stomach acid and the full passage through the digestive system — arriving viable and active where they're needed most.</p>
+        </div>
+      </div>
+
+      <!-- Articles & References — Carousel -->
+      <div class="articles-section fade-up">
+        <div class="articles-section-header">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--frost-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          <h3>Articles &amp; References</h3>
+        </div>
+        <p class="articles-intro">Peer-reviewed research &amp; expert presentations — including Dr. Leo Galland, MD. Provided for educational purposes only.</p>
+
+        <div class="articles-carousel-wrap">
+          <button class="carousel-arrow carousel-arrow-left" id="carouselPrev" aria-label="Previous articles">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <div class="articles-carousel-track" id="articlesTrack">
+
+            <a href="https://www.drgalland.com/longcovid/" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge whitepaper">White Paper</span>
+              <div class="accard-title">Long Covid: Prevention and Treatment</div>
+              <div class="accard-source">Dr. Leo Galland, MD &nbsp;·&nbsp; 2024–2025</div>
+              <span class="accard-read">Read →</span>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=8ugebwwv1AI" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge video">Video</span>
+              <div class="accard-title">The Gut and Oral Microbiome in Long Covid</div>
+              <div class="accard-source">Dr. Leo Galland, MD &nbsp;·&nbsp; 2023</div>
+              <span class="accard-read">Watch →</span>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=PsNSwuC-FFE" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge video">Video</span>
+              <div class="accard-title">Restoring the Gut-Brain Axis after Covid-19</div>
+              <div class="accard-source">Dr. Leo Galland, MD &nbsp;·&nbsp; Long Covid Coalition &nbsp;·&nbsp; 2023</div>
+              <span class="accard-read">Watch →</span>
+            </a>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28927034/" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge">Research</span>
+              <div class="accard-title">Gut microbiota functions: metabolism of nutrients &amp; food components</div>
+              <div class="accard-source">European Journal of Nutrition &nbsp;·&nbsp; 2018</div>
+              <span class="accard-read">Read →</span>
+            </a>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/26222792/" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge">Research</span>
+              <div class="accard-title"><em>Bacillus subtilis</em>: a model soil bacterium with probiotic potential</div>
+              <div class="accard-source">Frontiers in Microbiology &nbsp;·&nbsp; 2015</div>
+              <span class="accard-read">Read →</span>
+            </a>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/29018282/" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge">Research</span>
+              <div class="accard-title">Immune modulation by gut microbiota: the role of spore-forming bacteria</div>
+              <div class="accard-source">Cell Host &amp; Microbe &nbsp;·&nbsp; 2017</div>
+              <span class="accard-read">Read →</span>
+            </a>
+
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6540481/" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge">Research</span>
+              <div class="accard-title">The gut microbiota-brain axis and its role in human health</div>
+              <div class="accard-source">Nutrients / NIH PMC &nbsp;·&nbsp; 2019</div>
+              <span class="accard-read">Read →</span>
+            </a>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/23912214/" target="_blank" rel="noopener" class="accard">
+              <span class="article-type-badge">Research</span>
+              <div class="accard-title">Short-chain fatty acids and human colonic function</div>
+              <div class="accard-source">Physiological Reviews &nbsp;·&nbsp; 2001</div>
+              <span class="accard-read">Read →</span>
+            </a>
+
+          </div>
+
+          <button class="carousel-arrow carousel-arrow-right" id="carouselNext" aria-label="Next articles">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+
+        <p class="articles-disclaimer">
+          <strong>Disclaimer:</strong> These references are for educational purposes only and do not constitute medical advice. These statements have not been evaluated by the FDA. Tundrex products are not intended to diagnose, treat, cure, or prevent any disease.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PROTOCOL TILES ===================== -->
+  <style>
+    /* 5-tile grid: 3 top row, 2 centered bottom row */
+    .proto-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 28px;
+    }
+    .proto-tile { grid-column: span 2; }
+    .proto-tile:nth-child(4) { grid-column: 2 / span 2; }
+    .proto-tile:nth-child(5) { grid-column: 4 / span 2; }
+    .proto-tile {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .proto-tile:hover { transform: translateY(-8px); box-shadow: 0 28px 80px rgba(0,0,0,0.55); }
+    .proto-tile-bg { position: absolute; inset: 0; z-index: 0; }
+    .proto-tile-bg--immunity   { background: linear-gradient(150deg, #071705 0%, #122E08 45%, #1B4B0D 75%, #0D2806 100%); }
+    .proto-tile-bg--microbiome { background: linear-gradient(150deg, #051208 0%, #0D2E18 45%, #163D22 75%, #0A2410 100%); }
+    .proto-tile-bg--supplement { background: linear-gradient(150deg, #0A0812 0%, #1A1030 45%, #2A1848 75%, #150D28 100%); }
+    .proto-tile-bg--wellbeing  { background: linear-gradient(150deg, #050E12 0%, #0C2532 45%, #13364A 75%, #082030 100%); }
+    .proto-tile-bg--git        { background: linear-gradient(150deg, #120805 0%, #2E1508 45%, #4B2A0D 75%, #281406 100%); }
+    .proto-tile-bg--immunity::after   { content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; background:radial-gradient(circle, rgba(90,158,56,0.28) 0%, transparent 70%); border-radius:50%; pointer-events:none; }
+    .proto-tile-bg--microbiome::after { content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; background:radial-gradient(circle, rgba(57,140,100,0.24) 0%, transparent 70%); border-radius:50%; pointer-events:none; }
+    .proto-tile-bg--supplement::after { content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; background:radial-gradient(circle, rgba(120,80,200,0.22) 0%, transparent 70%); border-radius:50%; pointer-events:none; }
+    .proto-tile-bg--wellbeing::after  { content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; background:radial-gradient(circle, rgba(56,130,180,0.22) 0%, transparent 70%); border-radius:50%; pointer-events:none; }
+    .proto-tile-bg--git::after        { content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; background:radial-gradient(circle, rgba(180,100,30,0.24) 0%, transparent 70%); border-radius:50%; pointer-events:none; }
+    .proto-tile-badge { position:absolute; top:16px; right:16px; z-index:3; background:linear-gradient(135deg,#C9A84C,#E8C96A); color:#1a0f00; font-size:0.7rem; font-weight:800; border-radius:100px; padding:5px 13px; letter-spacing:0.05em; box-shadow:0 2px 12px rgba(201,168,76,0.45); white-space:nowrap; }
+    .proto-tile-inner { position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
+    .proto-tile-top { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:44px 28px 24px; text-align:center; }
+    .proto-tile-icon-wrap { width:68px; height:68px; border-radius:18px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+    .proto-tile-name { font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:#fff; line-height:1.15; margin-bottom:8px; }
+    .proto-tile-duration { font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.48); }
+    .proto-tile-bottom { padding:22px 26px 26px; background:rgba(0,0,0,0.32); backdrop-filter:blur(4px); border-top:1px solid rgba(255,255,255,0.07); }
+    .proto-tile-desc { font-size:0.84rem; color:rgba(255,255,255,0.7); line-height:1.55; margin-bottom:14px; }
+    .proto-tile-pricing { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+    .proto-tile-price { font-size:1.45rem; font-weight:700; color:#fff; }
+    .proto-tile-old { font-size:0.88rem; color:rgba(255,255,255,0.42); text-decoration:line-through; }
+    .proto-tile-cta { display:block; text-align:center; padding:11px 20px; background:rgba(90,158,56,0.18); border:1.5px solid rgba(90,158,56,0.45); color:#7DC455; font-size:0.84rem; font-weight:700; border-radius:10px; transition:background 0.2s, color 0.2s; letter-spacing:0.02em; }
+    .proto-tile:hover .proto-tile-cta { background:rgba(90,158,56,0.32); color:#A8D98A; }
+    @media (max-width:900px) { .proto-tiles-grid { grid-template-columns:1fr; } .proto-tile,.proto-tile:nth-child(4),.proto-tile:nth-child(5) { grid-column: span 1; min-height:360px; } }
+  </style>
+
+  <section class="products-section bg-green" id="products">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Our Protocols</span>
+        <h2 class="section-title">Choose Your Protocol</h2>
+        <p class="section-subtitle">
+          From daily immune maintenance to deep full-system restoration — every Tundrex protocol is built 
+          around the same pristine Siberian <em>Bacillus subtilis</em> strain.
+        </p>
+      </div>
+
+      <div class="proto-tiles-grid">
+
+        <!-- Immunity Boost -->
+        <a class='proto-tile fade-up delay-1' href='/protocols/immunity-boost'>
+          <div class="proto-tile-bg proto-tile-bg--immunity"></div>
+          <div class="proto-tile-inner">
+            <div class="proto-tile-top">
+              <div class="proto-tile-icon-wrap">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="proto-tile-name">Immunity<br/>Boost</h3>
+              <span class="proto-tile-duration">10-Day Course · 1 Product</span>
+            </div>
+            <div class="proto-tile-bottom">
+              <p class="proto-tile-desc">Daily immune support &amp; microbiome maintenance. The recommended starting point — repeat every 3–4 months.</p>
+              <div class="proto-tile-pricing">
+                <span class="proto-tile-price">$44.99</span>
+              </div>
+              <span class="proto-tile-cta">View Protocol →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Microbiome Recovery -->
+        <a class='proto-tile fade-up delay-2' href='/protocols/microbiome-recovery'>
+          <div class="proto-tile-bg proto-tile-bg--microbiome"></div>
+          <span class="proto-tile-badge">SAVE $15</span>
+          <div class="proto-tile-inner">
+            <div class="proto-tile-top">
+              <div class="proto-tile-icon-wrap">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <h3 class="proto-tile-name">Microbiome<br/>Recovery</h3>
+              <span class="proto-tile-duration">20-Day Course · 2 Products</span>
+            </div>
+            <div class="proto-tile-bottom">
+              <p class="proto-tile-desc">Intensive gut restoration after antibiotics, illness, or disruption. Small &amp; large intestine coverage.</p>
+              <div class="proto-tile-pricing">
+                <span class="proto-tile-price">$119.97</span>
+                <span class="proto-tile-old">$134.97</span>
+              </div>
+              <span class="proto-tile-cta">View Protocol →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Supplement Your Recovery -->
+        <a class='proto-tile fade-up delay-3' href='/protocols/supplement-your-recovery'>
+          <div class="proto-tile-bg proto-tile-bg--supplement"></div>
+          <span class="proto-tile-badge">SAVE $15</span>
+          <div class="proto-tile-inner">
+            <div class="proto-tile-top">
+              <div class="proto-tile-icon-wrap">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              </div>
+              <h3 class="proto-tile-name">Supplement<br/>Your Recovery</h3>
+              <span class="proto-tile-duration">25-Day Course · 2 Products</span>
+            </div>
+            <div class="proto-tile-bottom">
+              <p class="proto-tile-desc">Deeper restoration with an extended 15-day small intestine phase followed by large intestine support.</p>
+              <div class="proto-tile-pricing">
+                <span class="proto-tile-price">$164.96</span>
+                <span class="proto-tile-old">$179.96</span>
+              </div>
+              <span class="proto-tile-cta">View Protocol →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Return to Well-Being -->
+        <a class='proto-tile fade-up delay-4' href='/protocols/return-to-well-being'>
+          <div class="proto-tile-bg proto-tile-bg--wellbeing"></div>
+          <span class="proto-tile-badge">SAVE $25</span>
+          <div class="proto-tile-inner">
+            <div class="proto-tile-top">
+              <div class="proto-tile-icon-wrap">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
+              </div>
+              <h3 class="proto-tile-name">Return to<br/>Well-Being</h3>
+              <span class="proto-tile-duration">35-Day Course · 3 Products</span>
+            </div>
+            <div class="proto-tile-bottom">
+              <p class="proto-tile-desc">Full-spectrum microbiome restoration using all 3 Tundrex products. Complete digestive tract coverage.</p>
+              <div class="proto-tile-pricing">
+                <span class="proto-tile-price">$199.95</span>
+                <span class="proto-tile-old">$224.95</span>
+              </div>
+              <span class="proto-tile-cta">View Protocol →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Protocol To Support GIT Treatment -->
+        <a class='proto-tile fade-up delay-5' href='/protocols/git-treatment'>
+          <div class="proto-tile-bg proto-tile-bg--git"></div>
+          <span class="proto-tile-badge">SAVE $35</span>
+          <div class="proto-tile-inner">
+            <div class="proto-tile-top">
+              <div class="proto-tile-icon-wrap">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h3 class="proto-tile-name">GIT Treatment<br/>Protocol</h3>
+              <span class="proto-tile-duration">45-Day Course · 3 Products</span>
+            </div>
+            <div class="proto-tile-bottom">
+              <p class="proto-tile-desc">The most intensive protocol — 25-day small intestine phase for complete GI restoration.</p>
+              <div class="proto-tile-pricing">
+                <span class="proto-tile-price">$279.93</span>
+                <span class="proto-tile-old">$314.93</span>
+              </div>
+              <span class="proto-tile-cta">View Protocol →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center;margin-top:48px;" class="fade-up">
+        <a class='btn btn-primary' href='/products'>View All Products &amp; Protocols</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GUT HEALTH MATTERS ===================== -->
+  <section class="gut-section bg-grey" id="gut-health">
+    <div class="container">
+      <div class="gut-inner">
+        <div>
+          <span class="section-tag fade-up">The Science</span>
+          <h2 class="section-title fade-up">Why Gut Health<br/>Changes Everything</h2>
+          <p class="section-subtitle fade-up" style="margin-bottom:20px;">
+            Your gut is home to over 100 trillion microorganisms — a complex ecosystem that governs 
+            not just digestion, but your immune system, mood, energy, and even cognitive function.
+          </p>
+          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;max-width:500px;" class="fade-up">
+            Modern life — stress, processed foods, antibiotics, environmental toxins — strips away 
+            the beneficial bacteria your body depends on. Tundrex delivers hardy, spore-forming 
+            <em>Bacillus subtilis</em> strains that <strong style="color:var(--white);">survive the journey</strong> 
+            and actively rebuild your microbiome from the inside out.
+          </p>
+          <div class="gut-stats">
+            <div class="gut-stat fade-up delay-1">
+              <div class="gut-stat-number" data-count="70" data-suffix="%">0%</div>
+              <div class="gut-stat-label">of your immune system lives in your gut</div>
+            </div>
+            <div class="gut-stat fade-up delay-2">
+              <div class="gut-stat-number" data-count="95" data-suffix="%">0%</div>
+              <div class="gut-stat-label">of serotonin is produced in the gut</div>
+            </div>
+            <div class="gut-stat fade-up delay-3">
+              <div class="gut-stat-number" data-count="100" data-suffix="T+">0T+</div>
+              <div class="gut-stat-label">microorganisms in the average gut</div>
+            </div>
+            <div class="gut-stat fade-up delay-4">
+              <div class="gut-stat-number" data-count="2" data-suffix="nd">0nd</div>
+              <div class="gut-stat-label">brain — the enteric nervous system</div>
+            </div>
+          </div>
+        </div>
+        <div class="gut-visual fade-in">
+          <div class="gut-orb">
+            <div class="gut-orb-ring"></div>
+            <div class="gut-orb-ring"></div>
+            <div class="gut-orb-inner">
+              <img src="images/gut-diagram.png" alt="Gut microbiome diagram" style="width:200px;height:200px;object-fit:contain;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOCTOR TESTIMONIAL ===================== -->
+  <section class="doctor-section bg-green">
+    <div class="container">
+      <div class="doctor-card fade-up">
+        <div class="doctor-card-quote-decor"><span>"</span></div>
+        <div class="doctor-card-body">
+          <blockquote class="doctor-quote">
+            Bacillus subtilis is the finest probiotic organism I have yet worked with.
+            Its capacity to modulate immune function and restore gut integrity is unlike 
+            anything else in my clinical practice.
+          </blockquote>
+          <div class="doctor-attribution">
+            <div class="doctor-avatar">
+              <img src="images/doctor.png" alt="Dr. Leo Galland, MD" />
+            </div>
+            <div class="doctor-info">
+              <strong>Dr. Leo Galland, MD</strong>
+              <span>Integrative Medicine Physician · New York, NY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIGNS YOU NEED PROBIOTICS ===================== -->
+  <section class="signs-section bg-grey">
+    <div class="container">
+      <div class="signs-inner">
+        <div>
+          <span class="section-tag fade-up">Is This You?</span>
+          <h2 class="section-title fade-up">Common Signs Your<br/>Gut Needs Support</h2>
+          <p class="section-subtitle fade-up" style="margin-bottom:32px;">
+            Your body speaks through symptoms. If you're experiencing any of these, 
+            your microbiome may be calling for help.
+          </p>
+          <a class='btn btn-primary fade-up' href='/products'>Find Your Protocol</a>
+        </div>
+
+        <div class="signs-list">
+          <div class="sign-item fade-up delay-1">
+            <div class="sign-check">✓</div>
+            <span>Frequent bloating or gas</span>
+          </div>
+          <div class="sign-item fade-up delay-1">
+            <div class="sign-check">✓</div>
+            <span>Chronic fatigue or low energy</span>
+          </div>
+          <div class="sign-item fade-up delay-2">
+            <div class="sign-check">✓</div>
+            <span>Irregular digestion or IBS</span>
+          </div>
+          <div class="sign-item fade-up delay-2">
+            <div class="sign-check">✓</div>
+            <span>Brain fog &amp; poor concentration</span>
+          </div>
+          <div class="sign-item fade-up delay-3">
+            <div class="sign-check">✓</div>
+            <span>Frequent colds or infections</span>
+          </div>
+          <div class="sign-item fade-up delay-3">
+            <div class="sign-check">✓</div>
+            <span>Food sensitivities or intolerances</span>
+          </div>
+          <div class="sign-item fade-up delay-4">
+            <div class="sign-check">✓</div>
+            <span>Skin issues (acne, eczema)</span>
+          </div>
+          <div class="sign-item fade-up delay-4">
+            <div class="sign-check">✓</div>
+            <span>Mood swings or anxiety</span>
+          </div>
+          <div class="sign-item fade-up delay-5">
+            <div class="sign-check">✓</div>
+            <span>Recent antibiotic use</span>
+          </div>
+          <div class="sign-item fade-up delay-5">
+            <div class="sign-check">✓</div>
+            <span>Poor sleep quality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="reviews-section bg-green" id="reviews">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Customer Reviews</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Thousands of customers have experienced the Tundrex difference. Here&rsquo;s what they&rsquo;re saying.
+        </p>
+      </div>
+
+      <div class="reviews-carousel-wrap fade-up">
+        <button class="carousel-arrow carousel-arrow-left" id="homeRevPrev" aria-label="Previous reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="reviews-track" id="homeRevTrack">
+          
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I've tried probably six different probiotic brands over the years. None of them made a noticeable difference. Within two weeks of starting Tundrex 1.1, my bloating was noticeably reduced and I had more consistent energy throughout the day."</p>
+              <div class="review-author">
+                <span class="review-name">Sarah M.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Did the Immunity Boost protocol after my doctor suggested adding a probiotic. I usually get at least two or three colds every winter — this past season I had zero. I'm a convert."</p>
+              <div class="review-author">
+                <span class="review-name">James T.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"After a 10-day course of antibiotics last spring, my gut was a wreck. My doctor recommended a probiotic and I found Tundrex. The Microbiome Recovery protocol brought me back to normal faster than I expected."</p>
+              <div class="review-author">
+                <span class="review-name">Rachel K.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Three months in, doing a course every quarter as suggested. Digestion is much calmer — no more afternoon crashes, better focus at work. It's become a non-negotiable part of my routine."</p>
+              <div class="review-author">
+                <span class="review-name">David L.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My gut has been sensitive my whole life. Tundrex 1.1 is the first probiotic that's actually made a tangible difference. The spore-forming thing is real — most probiotics die in your stomach before they do anything."</p>
+              <div class="review-author">
+                <span class="review-name">Maria S.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"A friend who's a functional medicine practitioner pointed me toward Tundrex. Started with the Immunity Boost and haven't looked back. Clean ingredients, no fillers, and it actually works."</p>
+              <div class="review-author">
+                <span class="review-name">Tom W.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I was skeptical — I'd tried other Bacillus subtilis supplements before with mixed results. Whatever they're doing with the Siberian sourcing, it's different. My gut feels more stable than it has in years."</p>
+              <div class="review-author">
+                <span class="review-name">Jennifer A.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Completed the Microbiome Recovery protocol after a bad stomach bug wiped out my gut flora. The two-phase approach with 1.1 then Tundrex 3 made a lot of sense. Felt back to myself by the end of it."</p>
+              <div class="review-author">
+                <span class="review-name">Carlos R.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I've been dealing with IBS symptoms for years. Tundrex hasn't cured anything, but the frequency and severity of flare-ups has dropped significantly since I started doing quarterly courses. That's all I can ask for."</p>
+              <div class="review-author">
+                <span class="review-name">Linda P.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+        </div>
+        <button class="carousel-arrow carousel-arrow-right" id="homeRevNext" aria-label="Next reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <div class="carousel-dots" id="homeRevDots"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="cta-section bg-green">
+    <div class="cta-bg"></div>
+    <div class="cta-border-top"></div>
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <span class="section-tag" style="justify-content:center;">
+          <span style="width:24px;height:1px;background:var(--frost-blue);display:block;"></span>
+          Take Action
+          <span style="width:24px;height:1px;background:var(--frost-blue);display:block;"></span>
+        </span>
+        <h2 class="section-title">Ready to Transform<br/>Your Gut Health?</h2>
+        <p class="section-subtitle" style="margin:0 auto 40px;text-align:center;">
+          Join thousands who've discovered the power of Siberian-sourced <em>Bacillus subtilis</em>. 
+          Your microbiome — and your body — will thank you.
+        </p>
+        <div class="cta-buttons">
+          <a class='btn btn-primary' href='/products'>
+            Shop All Products
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class='btn btn-outline' href='/contact'>Ask a Question</a>
+        </div>
+        <p class="cta-fine-print">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Secure checkout &nbsp;·&nbsp; Free shipping on orders $75+ &nbsp;·&nbsp; 30-day money-back guarantee
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo-white.png" alt="Tundrex" />
+          </div>
+          <p>
+            The world's finest probiotic — <em>Bacillus subtilis</em> sourced from pristine 
+            Siberian tundra soil. Evolved by nature. Unearthed for you.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Protocols</h4>
+          <ul>
+            <li><a href='/protocols/immunity-boost'>Immunity Boost</a></li>
+            <li><a href='/protocols/microbiome-recovery'>Microbiome Recovery</a></li>
+            <li><a href='/protocols/supplement-your-recovery'>Supplement Your Recovery</a></li>
+            <li><a href='/protocols/return-to-well-being'>Return to Well-Being</a></li>
+            <li><a href='/protocols/git-treatment'>GIT Treatment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#science">The Science</a></li>
+            <li><a href='/blog'>Blog</a></li>
+            <li><a href='/contact'>Contact Us</a></li>
+            <li><a href="#">About Tundrex</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Tundrex. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          * These statements have not been evaluated by the Food and Drug Administration. 
+          This product is not intended to diagnose, treat, cure, or prevent any disease. 
+          Always consult your healthcare provider before starting any new supplement.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Hero entrance animation
+    window.addEventListener('load', () => {
+      const heroEls = document.querySelectorAll('#heroContent > *');
+      heroEls.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 300 + i * 160);
+      });
+    });
+  </script>
+  <script>
+    // ── Articles Carousel ──────────────────────────────────────────
+    (function () {
+      const track  = document.getElementById('articlesTrack');
+      const prev   = document.getElementById('carouselPrev');
+      const next   = document.getElementById('carouselNext');
+      const dotsEl = document.getElementById('carouselDots');
+      if (!track) return;
+
+      const cards      = Array.from(track.querySelectorAll('.accard'));
+      const perPage    = () => window.innerWidth <= 768 ? 1 : 3;
+      const totalPages = () => Math.ceil(cards.length / perPage());
+      let   currentPage = 0;
+
+      // Build dots
+      function buildDots () {
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < totalPages(); i++) {
+          const d = document.createElement('span');
+          d.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(d);
+        }
+      }
+
+      function updateDots () {
+        Array.from(dotsEl.children).forEach((d, i) => {
+          d.classList.toggle('active', i === currentPage);
+        });
+      }
+
+      function updateArrows () {
+        prev.disabled = currentPage === 0;
+        next.disabled = currentPage >= totalPages() - 1;
+      }
+
+      function goTo (page) {
+        currentPage = Math.max(0, Math.min(page, totalPages() - 1));
+        const cardWidth   = cards[0].offsetWidth + 12; // gap=12
+        track.scrollTo({ left: currentPage * perPage() * cardWidth, behavior: 'smooth' });
+        updateDots();
+        updateArrows();
+      }
+
+      prev.addEventListener('click', () => goTo(currentPage - 1));
+      next.addEventListener('click', () => goTo(currentPage + 1));
+
+      // Sync dots on scroll
+      track.addEventListener('scroll', () => {
+        const cardWidth = cards[0].offsetWidth + 12;
+        const raw = track.scrollLeft / (perPage() * cardWidth);
+        currentPage = Math.round(raw);
+        updateDots();
+        updateArrows();
+      }, { passive: true });
+
+      // Rebuild on resize
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { buildDots(); goTo(0); }, 150);
+      });
+
+      buildDots();
+      updateArrows();
+    })();
+  </script>
+
+  <script>
+    // ── Reviews Carousel: homeRev ──────────────────────────────
+    (function () {
+      const track  = document.getElementById('homeRevTrack');
+      const prev   = document.getElementById('homeRevPrev');
+      const next   = document.getElementById('homeRevNext');
+      const dotsEl = document.getElementById('homeRevDots');
+      if (!track) return;
+      const cards      = Array.from(track.querySelectorAll('.review-card'));
+      const perPage    = () => window.innerWidth <= 600 ? 1 : (window.innerWidth <= 900 ? 2 : 3);
+      const totalPages = () => Math.ceil(cards.length / perPage());
+      let   currentPage = 0;
+      function buildDots() {
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < totalPages(); i++) {
+          const d = document.createElement('span');
+          d.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(d);
+        }
+      }
+      function updateDots() { Array.from(dotsEl.children).forEach((d, i) => d.classList.toggle('active', i === currentPage)); }
+      function updateArrows() { prev.disabled = currentPage === 0; next.disabled = currentPage >= totalPages() - 1; }
+      function goTo(page) {
+        currentPage = Math.max(0, Math.min(page, totalPages() - 1));
+        const gap = 20;
+        const cardW = cards[0].offsetWidth + gap;
+        track.scrollTo({ left: currentPage * perPage() * cardW, behavior: 'smooth' });
+        updateDots(); updateArrows();
+      }
+      prev.addEventListener('click', () => goTo(currentPage - 1));
+      next.addEventListener('click', () => goTo(currentPage + 1));
+      track.addEventListener('scroll', () => {
+        const cardW = cards[0].offsetWidth + 20;
+        const pp = perPage();
+        currentPage = Math.round(track.scrollLeft / (pp * cardW));
+        updateDots(); updateArrows();
+      }, { passive: true });
+      let rt;
+      window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { buildDots(); goTo(0); }, 150); });
+      buildDots(); updateArrows();
+    })();
+  </script>
+</body>
+</html>

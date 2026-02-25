@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Tundrex Probiotic Products & Protocols</title>
+  <meta name="description" content="Shop Tundrex probiotic products — Tundrex 1.1, 3, and 4 individual products plus bundle protocols for immunity, microbiome recovery, and full-system restoration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Product card enhancements */
+    .product-card-lg {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+      border: 1.5px solid transparent;
+    }
+    .product-card-lg:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      border-color: rgba(57,87,36,0.2);
+    }
+    .product-card-lg .product-img-wrap {
+      position: relative;
+      background: var(--bg-grey);
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 240px;
+      min-height: 240px;
+      overflow: hidden;
+    }
+    .product-card-lg .product-img-wrap img {
+      width: auto;
+      max-width: 180px;
+      height: 100%;
+      max-height: 190px;
+      object-fit: contain;
+    }
+    .product-card-lg .product-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card-lg .product-name {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .product-card-lg .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-dark-sub);
+      line-height: 1.65;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .product-card-lg .product-strain {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--brand-green);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .product-card-lg .product-pricing {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .product-card-lg .product-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .product-card-lg .product-price-old {
+      font-size: 0.9rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+    .product-card-lg .product-savings {
+      font-size: 0.75rem;
+      color: var(--brand-green);
+      font-weight: 600;
+      background: rgba(57,87,36,0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .product-card-lg .product-btn {
+      display: block;
+      text-align: center;
+      padding: 13px 24px;
+      background: var(--brand-green);
+      color: var(--white);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: none;
+    }
+    .product-card-lg .product-btn:hover { background: var(--brand-green-3); }
+
+    /* Section divider */
+    .shop-section-divider {
+      text-align: center;
+      padding: 56px 0 40px;
+      position: relative;
+    }
+    .shop-section-divider::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(0,0,0,0.08);
+    }
+    .shop-section-divider-label {
+      display: inline-block;
+      background: var(--bg-grey);
+      position: relative;
+      z-index: 1;
+      padding: 0 24px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #999;
+      font-weight: 600;
+    }
+
+    /* Protocol card style */
+    .protocol-card-shop {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1.5px solid transparent;
+      text-decoration: none;
+      color: inherit;
+    }
+    .protocol-card-shop:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      border-color: rgba(57,87,36,0.2);
+    }
+    .protocol-card-shop-img {
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      background: var(--bg-grey);
+      padding: 16px 20px;
+      cursor: zoom-in;
+      display: block;
+      border-radius: 16px 16px 0 0;
+    }
+    .protocol-card-shop-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .protocol-card-shop-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .protocol-card-shop-body p {
+      font-size: 0.86rem;
+      color: var(--text-dark-sub);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+    .protocol-card-shop-pricing {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .protocol-card-shop-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .protocol-card-shop-old {
+      font-size: 0.85rem;
+      color: #999;
+      text-decoration: line-through;
+    }
+    .protocol-card-shop-save {
+      font-size: 0.72rem;
+      color: var(--brand-green);
+      font-weight: 700;
+      background: rgba(57,87,36,0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .protocol-card-shop-cta {
+      display: flex;
+      gap: 10px;
+    }
+    .protocol-card-shop-cta .btn-details {
+      flex: 1;
+      text-align: center;
+      padding: 11px 16px;
+      background: transparent;
+      border: 1.5px solid rgba(57,87,36,0.35);
+      color: var(--brand-green);
+      border-radius: 10px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .protocol-card-shop-cta .btn-details:hover { background: rgba(57,87,36,0.06); }
+    .protocol-card-shop-cta .btn-buy {
+      flex: 1;
+      text-align: center;
+      padding: 11px 16px;
+      background: var(--brand-green);
+      color: white;
+      border-radius: 10px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .protocol-card-shop-cta .btn-buy:hover { background: var(--brand-green-3); }
+
+    /* Products page layout */
+    .products-page { padding: 80px 0; }
+    .products-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .protocols-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 960px) {
+      .products-page-grid { grid-template-columns: repeat(2, 1fr); }
+      .protocols-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .products-page-grid { grid-template-columns: 1fr; }
+      .protocols-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Product badge */
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--brand-green);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 100px;
+      padding: 4px 10px;
+      letter-spacing: 0.04em;
+    }
+    .product-badge.gold { background: var(--gold); color: #2a1a00; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class='nav-logo' href='/'><img src="images/logo-white.png" alt="Tundrex" /></a>
+        <ul class="nav-links">
+          <li><a href='/products' style='color:var(--frost-blue)'>Shop</a></li>
+          <li><a href='/#science'>Science</a></li>
+          <li><a href='/blog'>Blog</a></li>
+          <li><a href='/contact'>Contact</a></li>
+          <li><a class='nav-cta btn' href='/products'>Shop Now</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="nav-mobile" id="mobileNav">
+    <button class="nav-mobile-close" id="mobileClose">✕</button>
+    <img src="images/logo-white.png" alt="Tundrex" style="height:36px;width:auto;margin-bottom:8px;filter:brightness(0) invert(1);opacity:0.9;" />
+    <a href='/'>Home</a>
+    <a href='/products'>Shop All</a>
+    <a href='/#science'>Science</a>
+    <a href='/contact'>Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="section-tag">Shop All Tundrex</span>
+      <h1 class="fade-up">Products &amp; Protocols</h1>
+      <p class="fade-up delay-1">
+        Every Tundrex formula is built around the same pristine Siberian <em>Bacillus subtilis</em> strain. 
+        Browse individual products or save with one of our multi-phase protocols.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS SECTION ===== -->
+  <section class="products-page bg-grey" id="individual-products">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header fade-up" style="margin-bottom:48px;">
+        <span class="section-tag" style="color:var(--brand-green);">Individual Products</span>
+        <h2 class="section-title" style="color:var(--text-dark);">The Tundrex Probiotic Family</h2>
+        <p class="section-subtitle" style="color:var(--text-dark-sub);">
+          Three distinct products, each targeting a specific part of the digestive tract. Use individually or combined in our protocols for full-spectrum microbiome coverage.
+        </p>
+      </div>
+
+      <div class="products-page-grid">
+
+        <!-- Tundrex 1.1 -->
+        <div class="product-card-lg fade-up delay-1">
+          <div class="product-img-wrap">
+            <img src="images/tundrex-1-1.png" alt="Tundrex 1.1" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <p class="product-strain">Bacillus subtilis — Small Intestine</p>
+            <h3 class="product-name">Tundrex 1.1</h3>
+            <p class="product-desc">
+              The foundational Tundrex product. Delivers <em>Bacillus subtilis</em> — sourced from pristine Siberian tundra soil — active in the small intestine. The starting point for all Tundrex protocols.
+            </p>
+            <div class="product-pricing">
+              <span class="product-price">$44.99</span>
+              <span style="font-size:0.78rem;color:#999;">/ 50 capsules</span>
+            </div>
+            <div style="display:flex;gap:10px;">
+              <a href='/products/tundrex-1-1' onmouseout='this.style.background=\'transparent\'' onmouseover='this.style.background=\'rgba(57,87,36,0.06)\'' style='flex:1;text-align:center;padding:11px 16px;background:transparent;border:1.5px solid rgba(57,87,36,0.35);color:var(--brand-green);border-radius:10px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:all 0.2s;'>Learn More</a>
+              <a href="https://tundrex.co/products/tundrex" target="_blank" class="product-btn" style="flex:1;">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tundrex 3 -->
+        <div class="product-card-lg fade-up delay-2">
+          <div class="product-img-wrap">
+            <img src="images/tundrex-3.png" alt="Tundrex 3" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <p class="product-strain">Bacillus amyloliquefaciens — Large Intestine</p>
+            <h3 class="product-name">Tundrex 3</h3>
+            <p class="product-desc">
+              Delivers <em>Bacillus amyloliquefaciens</em> active in the <strong>large intestine</strong>. Works as Phase 2 in the Microbiome Recovery and Return to Well-Being protocols, extending microbiome support into the colon.
+            </p>
+            <div class="product-pricing">
+              <span class="product-price">$44.99</span>
+              <span style="font-size:0.78rem;color:#999;">/ 50 capsules</span>
+            </div>
+            <div style="display:flex;gap:10px;">
+              <a href='/products/tundrex-3' onmouseout='this.style.background=\'transparent\'' onmouseover='this.style.background=\'rgba(57,87,36,0.06)\'' style='flex:1;text-align:center;padding:11px 16px;background:transparent;border:1.5px solid rgba(57,87,36,0.35);color:var(--brand-green);border-radius:10px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:all 0.2s;'>Learn More</a>
+              <a href="https://tundrex.co/products/tundrex-3" target="_blank" class="product-btn" style="flex:1;">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tundrex 4 -->
+        <div class="product-card-lg fade-up delay-3">
+          <div class="product-img-wrap">
+            <img src="images/tundrex-4.png" alt="Tundrex 4" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <p class="product-strain">Bacillus amyloliquefaciens — Small Intestine</p>
+            <h3 class="product-name">Tundrex 4</h3>
+            <p class="product-desc">
+              Delivers <em>Bacillus amyloliquefaciens</em> active in the <strong>small intestine</strong>. The final phase in the Return to Well-Being and GIT Support protocols — completing the full digestive tract restoration cycle.
+            </p>
+            <div class="product-pricing">
+              <span class="product-price">$44.99</span>
+              <span style="font-size:0.78rem;color:#999;">/ 50 capsules</span>
+            </div>
+            <div style="display:flex;gap:10px;">
+              <a href='/products/tundrex-4' onmouseout='this.style.background=\'transparent\'' onmouseover='this.style.background=\'rgba(57,87,36,0.06)\'' style='flex:1;text-align:center;padding:11px 16px;background:transparent;border:1.5px solid rgba(57,87,36,0.35);color:var(--brand-green);border-radius:10px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:all 0.2s;'>Learn More</a>
+              <a href="https://tundrex.co/products/tundrex-4" target="_blank" class="product-btn" style="flex:1;">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- How to choose note -->
+      <div style="margin-top:48px;background:rgba(57,87,36,0.06);border:1px solid rgba(57,87,36,0.15);border-radius:14px;padding:28px 32px;" class="fade-up">
+        <h4 style="font-family:var(--font-serif);color:var(--text-dark);margin-bottom:12px;">How the Products Work Together</h4>
+        <p style="font-size:0.88rem;color:var(--text-dark-sub);line-height:1.65;margin-bottom:0;">
+          <strong>Tundrex 1.1</strong> (small intestine) → <strong>Tundrex 3</strong> (large intestine) → <strong>Tundrex 4</strong> (small intestine again). Used in sequence as part of a protocol, the three products provide complete digestive tract coverage. Each product can also be purchased as part of a <a href="#protocols" style="color:var(--brand-green);font-weight:600;">bundle protocol</a> to save up to $35.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROTOCOLS SECTION ===== -->
+  <style>
+    /* 5-card grid: 3 top row, 2 centered bottom row */
+    .ptg { display:grid; grid-template-columns:repeat(6,1fr); gap:24px; }
+    .ptg .ptc { grid-column: span 2; }
+    .ptg .ptc:nth-child(4) { grid-column: 2 / span 2; }
+    .ptg .ptc:nth-child(5) { grid-column: 4 / span 2; }
+    .ptc {
+      display:block; border-radius:16px; overflow:hidden; text-decoration:none; color:#fff;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
+    }
+    .ptc:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(0,0,0,0.55); color:#fff; }
+    .ptc--immunity    { background:linear-gradient(150deg,#071705,#122E08 45%,#1B4B0D 75%,#0D2806); }
+    .ptc--microbiome  { background:linear-gradient(150deg,#051208,#0D2E18 45%,#163D22 75%,#0A2410); }
+    .ptc--supplement  { background:linear-gradient(150deg,#0A0812,#1A1030 45%,#2A1848 75%,#150D28); }
+    .ptc--wellbeing   { background:linear-gradient(150deg,#050E12,#0C2532 45%,#13364A 75%,#082030); }
+    .ptc--git         { background:linear-gradient(150deg,#120805,#2E1508 45%,#4B2A0D 75%,#281406); }
+    .ptc-top { padding:28px 24px 18px; position:relative; display:flex; flex-direction:column; align-items:flex-start; }
+    .ptc-icon { width:56px; height:56px; border-radius:16px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13); display:flex; align-items:center; justify-content:center; margin-bottom:16px; flex-shrink:0; }
+    .ptc-badge { display:inline-block; background:linear-gradient(135deg,#C9A84C,#E8C96A); color:#1a0f00; font-size:0.7rem; font-weight:800; border-radius:100px; padding:4px 12px; letter-spacing:0.05em; margin-bottom:12px; }
+    .ptc-name { font-family:var(--font-serif); font-size:1.3rem; font-weight:800; margin:0 0 4px; }
+    .ptc-dur { font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5); }
+    .ptc-bot { padding:18px 24px 22px; background:rgba(0,0,0,0.25); }
+    .ptc-inc { font-size:0.76rem; font-style:italic; color:rgba(255,255,255,0.5); margin:0 0 8px; }
+    .ptc-desc { font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.5; margin:0 0 16px; }
+    .ptc-row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .ptc-prices { display:flex; align-items:center; gap:8px; }
+    .ptc-price { font-size:1.3rem; font-weight:700; }
+    .ptc-old { font-size:0.85rem; color:rgba(255,255,255,0.4); text-decoration:line-through; }
+    .ptc-btn { display:inline-block; padding:10px 20px; background:#395724; color:#fff; font-size:0.8rem; font-weight:700; border-radius:9px; text-decoration:none; transition:background 0.2s; white-space:nowrap; }
+    .ptc-btn:hover { background:#4A7A2F; }
+    @media(max-width:960px){ .ptg{grid-template-columns:repeat(2,1fr);} .ptg .ptc,.ptg .ptc:nth-child(4),.ptg .ptc:nth-child(5){grid-column:span 1;} }
+    @media(max-width:600px){ .ptg{grid-template-columns:1fr;} .ptg .ptc,.ptg .ptc:nth-child(4),.ptg .ptc:nth-child(5){grid-column:span 1;} }
+  </style>
+
+  <section class="bg-green" style="padding:80px 0;" id="protocols">
+    <div class="container">
+
+      <div class="section-header" style="margin-bottom:48px; opacity:1; transform:none;">
+        <span class="section-tag">Protocols &amp; Bundles</span>
+        <h2 class="section-title">Save With Multi-Phase Protocols</h2>
+        <p class="section-subtitle">
+          Pre-packaged protocols combining the right products for your health goal — at a discount. Each includes detailed directions on how to follow the full course.
+        </p>
+      </div>
+
+      <div class="ptg">
+
+        <!-- Immunity Boost -->
+        <a class='ptc ptc--immunity' href='/protocols/immunity-boost'>
+          <div class="ptc-top">
+            <div class="ptc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="ptc-name">Immunity Boost</div>
+            <div class="ptc-dur">10-Day Course · 1 Product</div>
+          </div>
+          <div class="ptc-bot">
+            <p class="ptc-inc">Tundrex 1.1 (×1) — 50 capsules</p>
+            <p class="ptc-desc">Daily immune support &amp; microbiome maintenance. The recommended starting point.</p>
+            <div class="ptc-row">
+              <div class="ptc-prices"><span class="ptc-price">$44.99</span></div>
+              <span class="ptc-btn">View Details →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Microbiome Recovery -->
+        <a class='ptc ptc--microbiome' href='/protocols/microbiome-recovery'>
+          <div class="ptc-top">
+            <div class="ptc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <span class="ptc-badge">SAVE $15</span>
+            <div class="ptc-name">Microbiome Recovery</div>
+            <div class="ptc-dur">20-Day Course · 2 Products</div>
+          </div>
+          <div class="ptc-bot">
+            <p class="ptc-inc">Tundrex 1.1 (×2) + Tundrex 3 (×1)</p>
+            <p class="ptc-desc">Intensive gut restoration after antibiotics, illness, or disruption — small &amp; large intestine coverage.</p>
+            <div class="ptc-row">
+              <div class="ptc-prices"><span class="ptc-price">$119.97</span> <span class="ptc-old">$134.97</span></div>
+              <span class="ptc-btn">View Details →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Supplement Your Recovery -->
+        <a class='ptc ptc--supplement' href='/protocols/supplement-your-recovery'>
+          <div class="ptc-top">
+            <div class="ptc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <span class="ptc-badge">SAVE $15</span>
+            <div class="ptc-name">Supplement Your Recovery</div>
+            <div class="ptc-dur">25-Day Course · 2 Products</div>
+          </div>
+          <div class="ptc-bot">
+            <p class="ptc-inc">Tundrex 1.1 (×3) + Tundrex 3 (×1)</p>
+            <p class="ptc-desc">Deeper restoration with an extended 15-day small intestine phase followed by large intestine support.</p>
+            <div class="ptc-row">
+              <div class="ptc-prices"><span class="ptc-price">$164.96</span> <span class="ptc-old">$179.96</span></div>
+              <span class="ptc-btn">View Details →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Return to Well-Being -->
+        <a class='ptc ptc--wellbeing' href='/protocols/return-to-well-being'>
+          <div class="ptc-top">
+            <div class="ptc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <span class="ptc-badge">SAVE $25</span>
+            <div class="ptc-name">Return to Well-Being</div>
+            <div class="ptc-dur">35-Day Course · 3 Products</div>
+          </div>
+          <div class="ptc-bot">
+            <p class="ptc-inc">Tundrex 1.1 (×3) + Tundrex 3 (×1) + Tundrex 4 (×1)</p>
+            <p class="ptc-desc">Full-spectrum microbiome restoration using all 3 Tundrex products. Complete digestive tract coverage.</p>
+            <div class="ptc-row">
+              <div class="ptc-prices"><span class="ptc-price">$199.95</span> <span class="ptc-old">$224.95</span></div>
+              <span class="ptc-btn">View Details →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Protocol To Support GIT Treatment -->
+        <a class='ptc ptc--git' href='/protocols/git-treatment'>
+          <div class="ptc-top">
+            <div class="ptc-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span class="ptc-badge">SAVE $35</span>
+            <div class="ptc-name">Protocol To Support GIT Treatment</div>
+            <div class="ptc-dur">45-Day Course · 3 Products</div>
+          </div>
+          <div class="ptc-bot">
+            <p class="ptc-inc">Tundrex 1.1 (×5) + Tundrex 3 (×1) + Tundrex 4 (×1)</p>
+            <p class="ptc-desc">The most intensive protocol — extended 25-day small intestine phase for complete GI restoration.</p>
+            <div class="ptc-row">
+              <div class="ptc-prices"><span class="ptc-price">$279.93</span> <span class="ptc-old">$314.93</span></div>
+              <span class="ptc-btn">View Details →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE BANNER -->
+  <section class="bg-grey" style="padding:56px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center;" class="fade-up">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:rgba(57,87,36,0.1);border:1px solid rgba(57,87,36,0.2);margin:0 auto 14px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 style="font-family:var(--font-serif);font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text-dark);">30-Day Guarantee</h4>
+          <p style="font-size:0.83rem;color:var(--text-dark-sub);">Not satisfied? Return within 30 days for a full refund — no questions asked.</p>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:rgba(57,87,36,0.1);border:1px solid rgba(57,87,36,0.2);margin:0 auto 14px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h4 style="font-family:var(--font-serif);font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text-dark);">Free Shipping</h4>
+          <p style="font-size:0.83rem;color:var(--text-dark-sub);">Complimentary shipping on all orders over $75. Ships within 1–3 business days.</p>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:rgba(57,87,36,0.1);border:1px solid rgba(57,87,36,0.2);margin:0 auto 14px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h4 style="font-family:var(--font-serif);font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text-dark);">Secure Checkout</h4>
+          <p style="font-size:0.83rem;color:var(--text-dark-sub);">256-bit SSL encryption. Your payment information is always secure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section bg-green" style="padding:72px 0;">
+    <div class="cta-bg"></div>
+    <div class="cta-border-top"></div>
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <h2 class="section-title">Not Sure Which to Choose?</h2>
+        <p class="section-subtitle" style="margin:0 auto 36px;text-align:center;">
+          Reach out to our team. We'll help you find the ideal protocol based on your health history and goals.
+        </p>
+        <div class="cta-buttons">
+          <a class='btn btn-primary' href='/contact'>Get Personalized Advice</a>
+          <a class='btn btn-outline' href='/#science'>Learn the Science</a>
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:24px;text-align:center;">* These statements have not been evaluated by the FDA. Not intended to diagnose, treat, cure, or prevent any disease.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="images/logo-white.png" alt="Tundrex" /></div>
+          <p>The world's finest probiotic — <em>Bacillus subtilis</em> sourced from pristine Siberian tundra soil. Evolved by nature. Unearthed for you.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href='/products/tundrex-1-1'>Tundrex 1.1</a></li>
+            <li><a href='/products/tundrex-3'>Tundrex 3</a></li>
+            <li><a href='/products/tundrex-4'>Tundrex 4</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Protocols</h4>
+          <ul>
+            <li><a href='/protocols/immunity-boost'>Immunity Boost</a></li>
+            <li><a href='/protocols/microbiome-recovery'>Microbiome Recovery</a></li>
+            <li><a href='/protocols/supplement-your-recovery'>Supplement Your Recovery</a></li>
+            <li><a href='/protocols/return-to-well-being'>Return to Well-Being</a></li>
+            <li><a href='/protocols/git-treatment'>GIT Treatment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href='/#science'>The Science</a></li>
+            <li><a href='/contact'>Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Tundrex. All rights reserved.</p>
+        <p class="footer-disclaimer">* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult your healthcare provider before starting any new supplement.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
