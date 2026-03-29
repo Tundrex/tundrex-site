@@ -8,7 +8,7 @@ redirects = []
 
 [build]
 publish = "/Users/jarvis/Desktop/tundrex-site"
-publishOrigin = "default"
+publishOrigin = "ui"
 
 [build.environment]
 

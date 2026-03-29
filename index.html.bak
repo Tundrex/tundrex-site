@@ -164,100 +164,6 @@
     </div>
   </div>
 
-  <!-- ===================== OUR STORY ===================== -->
-  <style>
-    .story-section { padding:100px 0 80px; }
-    .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; margin-top:48px; }
-    .story-highlight { font-size:3.2rem; font-weight:800; font-family:var(--font-serif); color:var(--frost-light,#A8D98A); line-height:1.1; margin-bottom:24px; }
-    .story-highlight span { color:rgba(255,255,255,0.5); }
-    .story-text p { color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:20px; font-size:0.92rem; }
-    .story-text em { color:var(--white,#fff); font-style:normal; font-weight:600; }
-    .story-callout { background:rgba(90,158,56,0.08); border:1px solid rgba(90,158,56,0.2); border-radius:14px; padding:24px 28px; margin-top:32px; }
-    .story-callout p { color:rgba(255,255,255,0.8); font-size:0.88rem; line-height:1.7; margin:0; }
-    .story-stat-row { display:flex; gap:32px; margin-top:40px; }
-    .story-stat { text-align:center; }
-    .story-stat-num { font-family:var(--font-serif); font-size:2.4rem; font-weight:800; color:#fff; line-height:1; }
-    .story-stat-label { font-size:0.75rem; color:rgba(255,255,255,0.5); margin-top:6px; letter-spacing:0.04em; }
-    @media (max-width:768px) { .story-grid { grid-template-columns:1fr; gap:32px; } .story-highlight { font-size:2.2rem; } .story-stat-row { gap:20px; } }
-  </style>
-  <section class="story-section bg-green" id="our-story">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-tag">Our Story</span>
-        <h2 class="section-title">Before the World Discovered the Microbiome,<br/>We Were Already There</h2>
-      </div>
-      <div class="story-grid">
-        <div class="fade-up">
-          <div class="story-highlight">30<span>+</span> years</div>
-          <div class="story-text">
-            <p>The medical technology behind the Tundrex product family was developed in the late 1980s and early 1990s &mdash; <em>long before the international medical community began to realize the vital role the human microbiome plays in health and wellness.</em></p>
-            <p>The developer spent more than 10 years researching and testing this technology to create a product line that remains in high demand decades later. The result: a unique, well-tested, highly effective, and safe product line successfully marketed worldwide for more than 30 years.</p>
-            <p>Tundrex has been available in the US since 2020, and tens of thousands of Americans have already discovered the benefits &ldquo;a probiotic that works&rdquo; can deliver.</p>
-          </div>
-          <div class="story-stat-row">
-            <div class="story-stat fade-up delay-1">
-              <div class="story-stat-num">1989</div>
-              <div class="story-stat-label">Research began</div>
-            </div>
-            <div class="story-stat fade-up delay-2">
-              <div class="story-stat-num">30+</div>
-              <div class="story-stat-label">Years on market</div>
-            </div>
-            <div class="story-stat fade-up delay-3">
-              <div class="story-stat-num">2020</div>
-              <div class="story-stat-label">US launch</div>
-            </div>
-          </div>
-        </div>
-        <div class="fade-up delay-2">
-          <div class="story-text">
-            <p>Early on, the Tundrex team identified the <em>Bacillus</em> bacteria group as important members of the human microbiome &ldquo;family&rdquo; &mdash; but often missing in the human gut.</p>
-            <p><em>Bacillus</em> bacteria are soil-based organisms that only survive in the human gut for about a month. One must replenish them regularly. In the world we live in today, there are no easy, natural ways to do so &mdash; everything is purified, triple-washed, and sanitized.</p>
-            <p><em>This is exactly what Tundrex does</em> &mdash; it delivers this important missing piece of the human microbiome.</p>
-          </div>
-          <div class="story-callout">
-            <p>Tundrex is <em>100% natural</em> &mdash; it contains only natural excipients and <em>Bacillus</em> bacteria in the endosporal form. No chemicals of any kind, which means no overdose or side effects. The endosporal form is the key to Tundrex&rsquo;s efficacy &mdash; it helps the bacteria safely travel through stomach acid and arrive in the intestine to activate and deliver the benefits we expect from a probiotic.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .doctor-section[style*="f7f6f2"] .doctor-card-body { background:rgba(0,0,0,0.03); border-color:rgba(90,158,56,0.15); }
-    .doctor-section[style*="f7f6f2"] .doctor-quote { color:#1a2a12; }
-    .doctor-section[style*="f7f6f2"] .doctor-attribution strong { color:#1a2a12; }
-    .doctor-section[style*="f7f6f2"] .doctor-attribution span { color:#555; }
-    .doctor-section[style*="f7f6f2"] .doctor-card-quote-decor span { color:#649642; opacity:0.3; }
-    .doctor-section[style*="f7f6f2"]::after { background:radial-gradient(ellipse, rgba(90,158,56,0.06) 0%, transparent 70%); }
-    .doctor-section[style*="f7f6f2"] .doctor-card-body::before { background:linear-gradient(90deg, transparent, #649642, transparent); opacity:0.35; }
-    .doctor-section[style*="f7f6f2"] .doctor-attribution { border-top-color:rgba(0,0,0,0.08); }
-  </style>
-  <!-- ===================== DOCTOR TESTIMONIAL ===================== -->
-  <section class="doctor-section" style="background:linear-gradient(180deg, #f7f6f2 0%, #edece6 100%); padding:80px 0;">
-    <div class="container">
-      <div class="doctor-card fade-up">
-        <div class="doctor-card-quote-decor"><span>"</span></div>
-        <div class="doctor-card-body">
-          <blockquote class="doctor-quote">
-            Bacillus subtilis is the finest probiotic organism I have yet worked with.
-            Its capacity to modulate immune function and restore gut integrity is unlike 
-            anything else in my clinical practice.
-          </blockquote>
-          <div class="doctor-attribution">
-            <div class="doctor-avatar">
-              <img src="images/doctor.png" alt="Dr. Leo Galland, MD" />
-            </div>
-            <div class="doctor-info">
-              <strong>Dr. Leo Galland, MD</strong>
-              <span>Integrative Medicine Physician · New York, NY</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== WHY TUNDREX ===================== -->
   <section class="why-section bg-grey" id="science">
     <div class="container">
@@ -303,127 +209,8 @@
     </div>
   </section>
 
-  <!-- ===================== REVIEWS ===================== -->
-  <section class="reviews-section bg-green" id="reviews">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-tag">Customer Reviews</span>
-        <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-subtitle" style="margin:0 auto;">
-          Thousands of customers have experienced the Tundrex difference. Here&rsquo;s what they&rsquo;re saying.
-        </p>
-      </div>
-
-      <div class="reviews-carousel-wrap fade-up">
-        <button class="carousel-arrow carousel-arrow-left" id="homeRevPrev" aria-label="Previous reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <div class="reviews-track" id="homeRevTrack">
-          
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I've tried probably six different probiotic brands over the years. None of them made a noticeable difference. Within two weeks of starting Tundrex 1.1, my bloating was noticeably reduced and I had more consistent energy throughout the day."</p>
-              <div class="review-author">
-                <span class="review-name">Sarah M.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"Did the Immunity Boost protocol after my doctor suggested adding a probiotic. I usually get at least two or three colds every winter — this past season I had zero. I'm a convert."</p>
-              <div class="review-author">
-                <span class="review-name">James T.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"After a 10-day course of antibiotics last spring, my gut was a wreck. My doctor recommended a probiotic and I found Tundrex. The Microbiome Recovery protocol brought me back to normal faster than I expected."</p>
-              <div class="review-author">
-                <span class="review-name">Rachel K.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"Three months in, doing a course every quarter as suggested. Digestion is much calmer — no more afternoon crashes, better focus at work. It's become a non-negotiable part of my routine."</p>
-              <div class="review-author">
-                <span class="review-name">David L.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"My gut has been sensitive my whole life. Tundrex 1.1 is the first probiotic that's actually made a tangible difference. The spore-forming thing is real — most probiotics die in your stomach before they do anything."</p>
-              <div class="review-author">
-                <span class="review-name">Maria S.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"A friend who's a functional medicine practitioner pointed me toward Tundrex. Started with the Immunity Boost and haven't looked back. Clean ingredients, no fillers, and it actually works."</p>
-              <div class="review-author">
-                <span class="review-name">Tom W.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I was skeptical — I'd tried other Bacillus subtilis supplements before with mixed results. Whatever they're doing with the Siberian sourcing, it's different. My gut feels more stable than it has in years."</p>
-              <div class="review-author">
-                <span class="review-name">Jennifer A.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"Completed the Microbiome Recovery protocol after a bad stomach bug wiped out my gut flora. The two-phase approach with 1.1 then Tundrex 3 made a lot of sense. Felt back to myself by the end of it."</p>
-              <div class="review-author">
-                <span class="review-name">Carlos R.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I've been dealing with IBS symptoms for years. Tundrex hasn't cured anything, but the frequency and severity of flare-ups has dropped significantly since I started doing quarterly courses. That's all I can ask for."</p>
-              <div class="review-author">
-                <span class="review-name">Linda P.</span>
-                <span class="review-badge">Verified Buyer</span>
-              </div>
-            </div>
-        </div>
-        <button class="carousel-arrow carousel-arrow-right" id="homeRevNext" aria-label="Next reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
-      </div>
-      <div class="carousel-dots" id="homeRevDots"></div>
-    </div>
-  </section>
-
-  <style>
-    /* Bacillus section: dark text on light bg */
-    #bacillus-subtilis .section-tag { color:#649642; }
-    #bacillus-subtilis .section-tag::before, #bacillus-subtilis .section-tag::after { background:#649642; }
-    #bacillus-subtilis .section-title { color:#1a2a12; }
-    #bacillus-subtilis .section-subtitle { color:#444; }
-    #bacillus-subtilis .why-card { background:white; border:1px solid rgba(0,0,0,0.08); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
-    #bacillus-subtilis .why-card h3 { color:#1a2a12; }
-    #bacillus-subtilis .why-card p { color:#555; }
-    #bacillus-subtilis .why-card p em { color:#333; }
-    #bacillus-subtilis .why-icon svg { stroke:#649642; }
-    #bacillus-subtilis .articles-section-header h3 { color:#1a2a12; }
-    #bacillus-subtilis .articles-section-header svg { stroke:#649642; }
-    #bacillus-subtilis .articles-intro { color:#555; }
-    #bacillus-subtilis .accard { background:white; border:1px solid rgba(0,0,0,0.08); box-shadow:0 4px 16px rgba(0,0,0,0.06); }
-    #bacillus-subtilis .accard-title { color:#1a2a12; }
-    #bacillus-subtilis .accard-source { color:#666; }
-    #bacillus-subtilis .accard-read { color:#649642; }
-    #bacillus-subtilis .articles-disclaimer { color:#777; }
-    #bacillus-subtilis .articles-disclaimer strong { color:#555; }
-    #bacillus-subtilis .carousel-arrow { background:rgba(0,0,0,0.06); border-color:rgba(0,0,0,0.1); color:#333; }
-    #bacillus-subtilis .carousel-arrow svg { stroke:#333; }
-    #bacillus-subtilis .carousel-dot { background:rgba(0,0,0,0.15); }
-    #bacillus-subtilis .carousel-dot.active { background:#649642; }
-  </style>
   <!-- ===================== WHY BACILLUS SUBTILIS ===================== -->
-  <section class="bg-grey" style="padding:80px 0;" id="bacillus-subtilis">
+  <section class="bg-green" style="padding:80px 0;" id="bacillus-subtilis">
     <div class="container">
       <div class="section-header fade-up">
         <span class="section-tag">The Science</span>
@@ -739,6 +526,80 @@
     </div>
   </section>
 
+  <!-- ===================== GUT HEALTH MATTERS ===================== -->
+  <section class="gut-section bg-grey" id="gut-health">
+    <div class="container">
+      <div class="gut-inner">
+        <div>
+          <span class="section-tag fade-up">The Science</span>
+          <h2 class="section-title fade-up">Why Gut Health<br/>Changes Everything</h2>
+          <p class="section-subtitle fade-up" style="margin-bottom:20px;">
+            Your gut is home to over 100 trillion microorganisms — a complex ecosystem that governs 
+            not just digestion, but your immune system, mood, energy, and even cognitive function.
+          </p>
+          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;max-width:500px;" class="fade-up">
+            Modern life — stress, processed foods, antibiotics, environmental toxins — strips away 
+            the beneficial bacteria your body depends on. Tundrex delivers hardy, spore-forming 
+            <em>Bacillus subtilis</em> strains that <strong style="color:var(--white);">survive the journey</strong> 
+            and actively rebuild your microbiome from the inside out.
+          </p>
+          <div class="gut-stats">
+            <div class="gut-stat fade-up delay-1">
+              <div class="gut-stat-number" data-count="70" data-suffix="%">0%</div>
+              <div class="gut-stat-label">of your immune system lives in your gut</div>
+            </div>
+            <div class="gut-stat fade-up delay-2">
+              <div class="gut-stat-number" data-count="95" data-suffix="%">0%</div>
+              <div class="gut-stat-label">of serotonin is produced in the gut</div>
+            </div>
+            <div class="gut-stat fade-up delay-3">
+              <div class="gut-stat-number" data-count="100" data-suffix="T+">0T+</div>
+              <div class="gut-stat-label">microorganisms in the average gut</div>
+            </div>
+            <div class="gut-stat fade-up delay-4">
+              <div class="gut-stat-number" data-count="2" data-suffix="nd">0nd</div>
+              <div class="gut-stat-label">brain — the enteric nervous system</div>
+            </div>
+          </div>
+        </div>
+        <div class="gut-visual fade-in">
+          <div class="gut-orb">
+            <div class="gut-orb-ring"></div>
+            <div class="gut-orb-ring"></div>
+            <div class="gut-orb-inner">
+              <img src="images/gut-diagram.png" alt="Gut microbiome diagram" style="width:200px;height:200px;object-fit:contain;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOCTOR TESTIMONIAL ===================== -->
+  <section class="doctor-section bg-green">
+    <div class="container">
+      <div class="doctor-card fade-up">
+        <div class="doctor-card-quote-decor"><span>"</span></div>
+        <div class="doctor-card-body">
+          <blockquote class="doctor-quote">
+            Bacillus subtilis is the finest probiotic organism I have yet worked with.
+            Its capacity to modulate immune function and restore gut integrity is unlike 
+            anything else in my clinical practice.
+          </blockquote>
+          <div class="doctor-attribution">
+            <div class="doctor-avatar">
+              <img src="images/doctor.png" alt="Dr. Leo Galland, MD" />
+            </div>
+            <div class="doctor-info">
+              <strong>Dr. Leo Galland, MD</strong>
+              <span>Integrative Medicine Physician · New York, NY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== SIGNS YOU NEED PROBIOTICS ===================== -->
   <section class="signs-section bg-grey">
     <div class="container">
@@ -800,52 +661,97 @@
   </section>
 
 
-  <!-- ===================== GUT HEALTH MATTERS ===================== -->
-  <section class="gut-section bg-grey" id="gut-health">
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="reviews-section bg-green" id="reviews">
     <div class="container">
-      <div class="gut-inner">
-        <div>
-          <span class="section-tag fade-up">The Science</span>
-          <h2 class="section-title fade-up">Why Gut Health<br/>Changes Everything</h2>
-          <p class="section-subtitle fade-up" style="margin-bottom:20px;">
-            Your gut is home to over 100 trillion microorganisms — a complex ecosystem that governs 
-            not just digestion, but your immune system, mood, energy, and even cognitive function.
-          </p>
-          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;max-width:500px;" class="fade-up">
-            Modern life — stress, processed foods, antibiotics, environmental toxins — strips away 
-            the beneficial bacteria your body depends on. Tundrex delivers hardy, spore-forming 
-            <em>Bacillus subtilis</em> strains that <strong style="color:var(--white);">survive the journey</strong> 
-            and actively rebuild your microbiome from the inside out.
-          </p>
-          <div class="gut-stats">
-            <div class="gut-stat fade-up delay-1">
-              <div class="gut-stat-number" data-count="70" data-suffix="%">0%</div>
-              <div class="gut-stat-label">of your immune system lives in your gut</div>
-            </div>
-            <div class="gut-stat fade-up delay-2">
-              <div class="gut-stat-number" data-count="95" data-suffix="%">0%</div>
-              <div class="gut-stat-label">of serotonin is produced in the gut</div>
-            </div>
-            <div class="gut-stat fade-up delay-3">
-              <div class="gut-stat-number" data-count="100" data-suffix="T+">0T+</div>
-              <div class="gut-stat-label">microorganisms in the average gut</div>
-            </div>
-            <div class="gut-stat fade-up delay-4">
-              <div class="gut-stat-number" data-count="2" data-suffix="nd">0nd</div>
-              <div class="gut-stat-label">brain — the enteric nervous system</div>
-            </div>
-          </div>
-        </div>
-        <div class="gut-visual fade-in">
-          <div class="gut-orb">
-            <div class="gut-orb-ring"></div>
-            <div class="gut-orb-ring"></div>
-            <div class="gut-orb-inner">
-              <img src="images/gut-diagram.png" alt="Gut microbiome diagram" style="width:200px;height:200px;object-fit:contain;" />
-            </div>
-          </div>
-        </div>
+      <div class="section-header fade-up">
+        <span class="section-tag">Customer Reviews</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Thousands of customers have experienced the Tundrex difference. Here&rsquo;s what they&rsquo;re saying.
+        </p>
       </div>
+
+      <div class="reviews-carousel-wrap fade-up">
+        <button class="carousel-arrow carousel-arrow-left" id="homeRevPrev" aria-label="Previous reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="reviews-track" id="homeRevTrack">
+          
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I've tried probably six different probiotic brands over the years. None of them made a noticeable difference. Within two weeks of starting Tundrex 1.1, my bloating was noticeably reduced and I had more consistent energy throughout the day."</p>
+              <div class="review-author">
+                <span class="review-name">Sarah M.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Did the Immunity Boost protocol after my doctor suggested adding a probiotic. I usually get at least two or three colds every winter — this past season I had zero. I'm a convert."</p>
+              <div class="review-author">
+                <span class="review-name">James T.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"After a 10-day course of antibiotics last spring, my gut was a wreck. My doctor recommended a probiotic and I found Tundrex. The Microbiome Recovery protocol brought me back to normal faster than I expected."</p>
+              <div class="review-author">
+                <span class="review-name">Rachel K.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Three months in, doing a course every quarter as suggested. Digestion is much calmer — no more afternoon crashes, better focus at work. It's become a non-negotiable part of my routine."</p>
+              <div class="review-author">
+                <span class="review-name">David L.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My gut has been sensitive my whole life. Tundrex 1.1 is the first probiotic that's actually made a tangible difference. The spore-forming thing is real — most probiotics die in your stomach before they do anything."</p>
+              <div class="review-author">
+                <span class="review-name">Maria S.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"A friend who's a functional medicine practitioner pointed me toward Tundrex. Started with the Immunity Boost and haven't looked back. Clean ingredients, no fillers, and it actually works."</p>
+              <div class="review-author">
+                <span class="review-name">Tom W.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I was skeptical — I'd tried other Bacillus subtilis supplements before with mixed results. Whatever they're doing with the Siberian sourcing, it's different. My gut feels more stable than it has in years."</p>
+              <div class="review-author">
+                <span class="review-name">Jennifer A.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Completed the Microbiome Recovery protocol after a bad stomach bug wiped out my gut flora. The two-phase approach with 1.1 then Tundrex 3 made a lot of sense. Felt back to myself by the end of it."</p>
+              <div class="review-author">
+                <span class="review-name">Carlos R.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I've been dealing with IBS symptoms for years. Tundrex hasn't cured anything, but the frequency and severity of flare-ups has dropped significantly since I started doing quarterly courses. That's all I can ask for."</p>
+              <div class="review-author">
+                <span class="review-name">Linda P.</span>
+                <span class="review-badge">Verified Buyer</span>
+              </div>
+            </div>
+        </div>
+        <button class="carousel-arrow carousel-arrow-right" id="homeRevNext" aria-label="Next reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <div class="carousel-dots" id="homeRevDots"></div>
     </div>
   </section>
 

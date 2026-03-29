@@ -113,10 +113,29 @@
             <span class="price-hero-badge">Save $25</span>
           </div>
           <div class="protocol-cta">
-            <a href="https://tundrex.co/products/infection-support" target="_blank" rel="noopener" class="btn btn-primary">
-              Buy on Tundrex.co
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            <div id="product-component-wellbeing"></div>
+<script type="text/javascript">
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) { if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); } } else { loadScript(); }
+  function loadScript() { var script = document.createElement('script'); script.async = true; script.src = scriptURL; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); script.onload = ShopifyBuyInit; }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({ domain: 'tundrex.myshopify.com', storefrontAccessToken: '6c9820933a952e2625a0a7ab5236c2cf' });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '6862423359554',
+        node: document.getElementById('product-component-wellbeing'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" } }, "button": { ":hover": { "background-color": "#5a873b" }, "background-color": "#649642", ":focus": { "background-color": "#5a873b" } } }, "contents": { "img": false, "button": false, "buttonWithQuantity": true, "title": false, "price": false }, "text": { "button": "Add to cart" } },
+          "cart": { "styles": { "button": { ":hover": { "background-color": "#5a873b" }, "background-color": "#649642", ":focus": { "background-color": "#5a873b" } }, "title": { "color": "#ffffff" }, "header": { "color": "#ffffff" }, "lineItems": { "color": "#ffffff" }, "subtotalText": { "color": "#ffffff" }, "subtotal": { "color": "#ffffff" }, "notice": { "color": "#ffffff" }, "currency": { "color": "#ffffff" }, "close": { "color": "#ffffff", ":hover": { "color": "#ffffff" } }, "empty": { "color": "#ffffff" }, "noteDescription": { "color": "#ffffff" }, "discountText": { "color": "#ffffff" }, "discountIcon": { "fill": "#ffffff" }, "discountAmount": { "color": "#ffffff" }, "cart": { "background-color": "#000000" }, "footer": { "background-color": "#000000" } }, "text": { "total": "Subtotal", "button": "Checkout" } },
+          "toggle": { "styles": { "toggle": { "background-color": "#649642", ":hover": { "background-color": "#5a873b" }, ":focus": { "background-color": "#5a873b" } } } }
+        }
+      });
+    });
+  }
+})();
+</script>
           </div>
           <div class="trust-pills">
             <span class="trust-pill">35-Day Course</span>
