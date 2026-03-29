@@ -351,7 +351,7 @@
             </div>
             <div style="display:flex;gap:10px;">
               <a href='/products/tundrex-1-1' onmouseout='this.style.background=\'transparent\'' onmouseover='this.style.background=\'rgba(57,87,36,0.06)\'' style='flex:1;text-align:center;padding:11px 16px;background:transparent;border:1.5px solid rgba(57,87,36,0.35);color:var(--brand-green);border-radius:10px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:all 0.2s;'>Learn More</a>
-              <a href="https://tundrex.co/products/tundrex" target="_blank" class="product-btn" style="flex:1;">Buy Now</a>
+              <div id="shop-buy-11" style="flex:1;"></div>
             </div>
           </div>
         </div>
@@ -373,7 +373,7 @@
             </div>
             <div style="display:flex;gap:10px;">
               <a href='/products/tundrex-3' onmouseout='this.style.background=\'transparent\'' onmouseover='this.style.background=\'rgba(57,87,36,0.06)\'' style='flex:1;text-align:center;padding:11px 16px;background:transparent;border:1.5px solid rgba(57,87,36,0.35);color:var(--brand-green);border-radius:10px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:all 0.2s;'>Learn More</a>
-              <a href="https://tundrex.co/products/tundrex-3" target="_blank" class="product-btn" style="flex:1;">Buy Now</a>
+              <div id="shop-buy-3" style="flex:1;"></div>
             </div>
           </div>
         </div>
@@ -395,7 +395,7 @@
             </div>
             <div style="display:flex;gap:10px;">
               <a href='/products/tundrex-4' onmouseout='this.style.background=\'transparent\'' onmouseover='this.style.background=\'rgba(57,87,36,0.06)\'' style='flex:1;text-align:center;padding:11px 16px;background:transparent;border:1.5px solid rgba(57,87,36,0.35);color:var(--brand-green);border-radius:10px;font-size:0.83rem;font-weight:600;text-decoration:none;transition:all 0.2s;'>Learn More</a>
-              <a href="https://tundrex.co/products/tundrex-4" target="_blank" class="product-btn" style="flex:1;">Buy Now</a>
+              <div id="shop-buy-4" style="flex:1;"></div>
             </div>
           </div>
         </div>
@@ -655,5 +655,52 @@
 </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- Shopify Buy Buttons -->
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  (function () {
+    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    if (window.ShopifyBuy) { if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); } } else { loadScript(); }
+    function loadScript() {
+      var script = document.createElement('script'); script.async = true; script.src = scriptURL;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+      script.onload = ShopifyBuyInit;
+    }
+    function ShopifyBuyInit() {
+      var client = ShopifyBuy.buildClient({ domain: 'tundrex.myshopify.com', storefrontAccessToken: '674853abbc6841c6c29d963e121a2f37' });
+      var btnStyle = { "button": { ":hover": { "background-color": "#5a873b" }, "background-color": "#649642", ":focus": { "background-color": "#5a873b" }, "border-radius": "12px" } };
+      var cartStyle = { "styles": { "button": { ":hover": { "background-color": "#5a873b" }, "background-color": "#649642", ":focus": { "background-color": "#5a873b" }, "border-radius": "12px" }, "title": { "color": "#ffffff" }, "header": { "color": "#ffffff" }, "lineItems": { "color": "#ffffff" }, "subtotalText": { "color": "#ffffff" }, "subtotal": { "color": "#ffffff" }, "notice": { "color": "#ffffff" }, "currency": { "color": "#ffffff" }, "close": { "color": "#ffffff", ":hover": { "color": "#ffffff" } }, "empty": { "color": "#ffffff" }, "noteDescription": { "color": "#ffffff" }, "discountText": { "color": "#ffffff" }, "discountIcon": { "fill": "#ffffff" }, "discountAmount": { "color": "#ffffff" }, "cart": { "background-color": "#000000" }, "footer": { "background-color": "#000000" } }, "text": { "total": "Subtotal", "button": "Checkout" }, "popup": false };
+      var toggleStyle = { "styles": { "toggle": { "background-color": "#649642", ":hover": { "background-color": "#5a873b" }, ":focus": { "background-color": "#5a873b" } } } };
+      var lineStyle = { "styles": { "variantTitle": { "color": "#ffffff" }, "title": { "color": "#ffffff" }, "price": { "color": "#ffffff" }, "fullPrice": { "color": "#ffffff" }, "discount": { "color": "#ffffff" }, "discountIcon": { "fill": "#ffffff" }, "quantity": { "color": "#ffffff" }, "quantityIncrement": { "color": "#ffffff", "border-color": "#ffffff" }, "quantityDecrement": { "color": "#ffffff", "border-color": "#ffffff" }, "quantityInput": { "color": "#ffffff", "border-color": "#ffffff" } } };
+      var products = [
+        { id: '1889068384322', node: 'shop-buy-11' },
+        { id: '6707012304962', node: 'shop-buy-3' },
+        { id: '6707016892482', node: 'shop-buy-4' }
+      ];
+      ShopifyBuy.UI.onReady(client).then(function (ui) {
+        products.forEach(function(p) {
+          var el = document.getElementById(p.node);
+          if (!el) return;
+          ui.createComponent('product', {
+            id: p.id,
+            node: el,
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: {
+              "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } }, "button": btnStyle.button }, "buttonDestination": "checkout", "contents": { "img": false, "button": false, "buttonWithQuantity": true, "title": false, "price": false }, "text": { "button": "Buy now" } },
+              "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } } },
+              "modalProduct": { "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true }, "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } }, "button": btnStyle.button }, "text": { "button": "Add to cart" } },
+              "option": {},
+              "cart": cartStyle,
+              "toggle": toggleStyle,
+              "lineItem": lineStyle
+            }
+          });
+        });
+      });
+    }
+  })();
+  /*]]>*/
+  </script>
 </body>
 </html>
