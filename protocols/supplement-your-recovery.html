@@ -134,7 +134,7 @@
   if (window.ShopifyBuy) { if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); } } else { loadScript(); }
   function loadScript() { var script = document.createElement('script'); script.async = true; script.src = scriptURL; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script); script.onload = ShopifyBuyInit; }
   function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({ domain: 'tundrex.myshopify.com', storefrontAccessToken: '6c9820933a952e2625a0a7ab5236c2cf' });
+    var client = ShopifyBuy.buildClient({ domain: 'tundrex.myshopify.com', storefrontAccessToken: '674853abbc6841c6c29d963e121a2f37' });
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent('product', {
         id: '6862422573122',
