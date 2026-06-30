@@ -401,5 +401,197 @@
       if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
     }
   </script>
+
+  <!-- Email Capture Popup Modal -->
+  <style>
+    #tundrex-popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #tundrex-popup-overlay.visible {
+      display: flex;
+      opacity: 1;
+    }
+    #tundrex-popup-modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    #tundrex-popup-overlay.visible #tundrex-popup-modal {
+      transform: scale(1);
+      opacity: 1;
+    }
+    #tundrex-popup-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #444;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    #tundrex-popup-close:hover { color: #111; }
+    #tundrex-popup-icon {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    #tundrex-popup-modal h2 {
+      color: #1a2e1a;
+      font-family: var(--font-serif, Georgia, serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 10px;
+    }
+    #tundrex-popup-modal p.popup-sub {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    #tundrex-popup-form input[type="email"] {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #tundrex-popup-form input[type="email"]:focus {
+      border-color: #2d5a1d;
+    }
+    #tundrex-popup-form button[type="submit"] {
+      width: 100%;
+      background: #2d5a1d;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #tundrex-popup-form button[type="submit"]:hover {
+      background: #234a16;
+    }
+    #tundrex-popup-privacy {
+      color: #999;
+      font-size: 0.75rem;
+      text-align: center;
+      margin-top: 12px;
+    }
+    #tundrex-popup-success {
+      text-align: center;
+      color: #1a2e1a;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 0;
+    }
+    @media (max-width: 480px) {
+      #tundrex-popup-modal {
+        max-width: 90vw;
+        padding: 28px 24px;
+      }
+    }
+  </style>
+
+  <div id="tundrex-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="tundrex-popup-title">
+    <div id="tundrex-popup-modal">
+      <button id="tundrex-popup-close" aria-label="Close popup">&times;</button>
+      <div id="tundrex-popup-icon">🌿</div>
+      <h2 id="tundrex-popup-title">Unlock Your Gut Health Potential</h2>
+      <p class="popup-sub">Join 10,000+ health-conscious readers. Get exclusive gut health tips, protocol guides, special offers &amp; new product launches.</p>
+      <form id="tundrex-popup-form" name="popup-newsletter" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="popup-newsletter" />
+        <input type="email" name="email" required placeholder="Enter your email address" autocomplete="email" />
+        <button type="submit">Get Free Health Tips →</button>
+      </form>
+      <div id="tundrex-popup-success" style="display:none;">🎉 You're in! Check your inbox for your first gut health tip.</div>
+      <p id="tundrex-popup-privacy">🔒 No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var SESSION_KEY = 'tundrex_popup_shown';
+      if (sessionStorage.getItem(SESSION_KEY)) return;
+
+      var overlay = document.getElementById('tundrex-popup-overlay');
+      var closeBtn = document.getElementById('tundrex-popup-close');
+      var form = document.getElementById('tundrex-popup-form');
+      var successMsg = document.getElementById('tundrex-popup-success');
+
+      function showPopup() {
+        overlay.style.display = 'flex';
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            overlay.classList.add('visible');
+          });
+        });
+        sessionStorage.setItem(SESSION_KEY, '1');
+      }
+
+      function closePopup() {
+        overlay.classList.remove('visible');
+        setTimeout(function() { overlay.style.display = 'none'; }, 300);
+      }
+
+      setTimeout(showPopup, 4000);
+
+      closeBtn.addEventListener('click', closePopup);
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closePopup();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closePopup();
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var emailVal = form.querySelector('input[type="email"]').value;
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'form-name=popup-newsletter&email=' + encodeURIComponent(emailVal)
+        }).then(function(res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+          } else {
+            alert('Something went wrong. Please try again.');
+          }
+        }).catch(function() {
+          alert('Something went wrong. Please try again.');
+        });
+      });
+    })();
+  </script>
+  <!-- End Email Capture Popup Modal -->
+
 </body>
 </html>
