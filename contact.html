@@ -147,7 +147,7 @@
               Fill out the form below and we'll get back to you within one business day.
             </p>
 
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
               <div class="form-row">
                 <div class="form-group">
                   <label for="firstName">First Name</label>
@@ -273,6 +273,22 @@
         if (icon) {
           icon.textContent = detail.open ? '−' : '+';
         }
+      });
+    });
+
+    // Form submission handling
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(() => {
+        form.innerHTML = '<div style="text-align:center;padding:40px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--frost-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3 style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:8px;">Message Sent!</h3><p style="font-size:0.85rem;color:#3a4a3a;">Thank you for reaching out. We\'ll get back to you within one business day.</p></div>';
+      }).catch(() => {
+        alert('Something went wrong. Please try again or email us at hello@tundrex.co');
       });
     });
   </script>
