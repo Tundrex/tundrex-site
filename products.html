@@ -613,6 +613,45 @@
     </div>
   </section>
 
+
+  <!-- ===================== NEWSLETTER SIGNUP ===================== -->
+  <section id="newsletter-signup" style="background:#0B1707;padding:80px 20px;text-align:center;">
+    <div style="max-width:560px;margin:0 auto;">
+      <h2 style="font-family:var(--font-serif,'Playfair Display',serif);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;color:#fff;margin:0 0 16px;">Join the Tundrex Community</h2>
+      <p style="font-family:var(--font-sans,'DM Sans',sans-serif);font-size:1rem;color:rgba(255,255,255,0.75);line-height:1.6;margin:0 0 32px;">Get exclusive gut health tips, protocol guides, new product launches, and special offers — delivered straight to your inbox.</p>
+      <form id="newsletterForm" name="newsletter" method="POST" data-netlify="true" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:stretch;">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <input type="email" name="email" placeholder="Your email address" required
+          style="flex:1 1 260px;min-width:0;padding:14px 18px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-family:var(--font-sans,'DM Sans',sans-serif);font-size:0.95rem;outline:none;transition:border-color 0.2s;" />
+        <button type="submit"
+          style="flex:0 0 auto;padding:14px 28px;border-radius:8px;background:#5A9E38;color:#fff;font-family:var(--font-sans,'DM Sans',sans-serif);font-size:0.95rem;font-weight:600;cursor:pointer;border:none;transition:background 0.2s;white-space:nowrap;">
+          Stay In The Loop
+        </button>
+      </form>
+      <p style="font-family:var(--font-sans,'DM Sans',sans-serif);font-size:0.78rem;color:rgba(255,255,255,0.4);margin:16px 0 0;">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+    <script>
+      (function() {
+        var form = document.getElementById('newsletterForm');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var data = new FormData(form);
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data).toString()
+          }).then(function() {
+            form.innerHTML = '<div style="padding:24px 0;"><p style="font-family:var(--font-serif,\'Playfair Display\',serif);font-size:1.3rem;color:#7DC455;margin:0 0 8px;font-weight:600;">You\'re in! 🎉</p><p style="font-family:var(--font-sans,\'DM Sans\',sans-serif);font-size:0.9rem;color:rgba(255,255,255,0.65);margin:0;">Check your inbox soon.</p></div>';
+          }).catch(function() {
+            alert('Something went wrong. Please try again.');
+          });
+        });
+      })();
+    </script>
+  </section>
+  <!-- ===================== END NEWSLETTER SIGNUP ===================== -->
+
   <!-- FOOTER -->
   <footer class="footer">
   <div class="container">
