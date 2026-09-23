@@ -4,6 +4,48 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── Promo Banner ── */
+  (function() {
+    var BANNER_KEY = 'tundrex_banner_dismissed_v1';
+    if (sessionStorage.getItem(BANNER_KEY)) return;
+    var banner = document.createElement('div');
+    banner.id = 'promo-banner';
+    banner.style.cssText = [
+      'position:fixed', 'top:0', 'left:0', 'width:100%', 'z-index:9999',
+      'background:linear-gradient(90deg,#3a7a1e,#5A9E38,#3a7a1e)',
+      'color:#fff', 'text-align:center', 'padding:10px 48px 10px 16px',
+      'font-family:"DM Sans",sans-serif', 'font-size:14px', 'font-weight:600',
+      'letter-spacing:0.5px', 'line-height:1.4', 'box-shadow:0 2px 12px rgba(0,0,0,0.25)'
+    ].join(';');
+    banner.innerHTML = [
+      '<span style="margin-right:10px;">⏱️</span>',
+      '<strong style="letter-spacing:1.5px;">48 HOURS ONLY</strong>',
+      '&nbsp;—&nbsp;',
+      '<strong>30% OFF</strong> Storewide. Use code&nbsp;',
+      '<span style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:4px;letter-spacing:1.5px;font-weight:700;">TUNDREX30</span>',
+      '&nbsp;&nbsp;',
+      '<a href="/products" style="color:#fff;text-decoration:underline;font-weight:700;">Shop Now →</a>',
+      '<button id="promo-banner-close" aria-label="Close" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:20px;cursor:pointer;line-height:1;padding:4px 6px;opacity:0.8;">✕</button>'
+    ].join('');
+    document.body.insertBefore(banner, document.body.firstChild);
+    // Push nav + body down
+    function adjustOffset() {
+      var h = banner.offsetHeight;
+      var nav = document.getElementById('nav');
+      if (nav) nav.style.top = h + 'px';
+      document.body.style.paddingTop = h + 'px';
+    }
+    adjustOffset();
+    window.addEventListener('resize', adjustOffset);
+    document.getElementById('promo-banner-close').addEventListener('click', function() {
+      banner.remove();
+      var nav = document.getElementById('nav');
+      if (nav) nav.style.top = '';
+      document.body.style.paddingTop = '';
+      sessionStorage.setItem(BANNER_KEY, '1');
+    });
+  })();
+
   /* ── Navbar scroll effect ── */
   const nav = document.querySelector('.nav');
   if (nav) {
