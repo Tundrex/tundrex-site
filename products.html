@@ -448,6 +448,12 @@
     .ptc-old { font-size:0.85rem; color:rgba(255,255,255,0.4); text-decoration:line-through; }
     .ptc-btn { display:inline-block; padding:10px 20px; background:#395724; color:#fff; font-size:0.8rem; font-weight:700; border-radius:9px; text-decoration:none; transition:background 0.2s; white-space:nowrap; }
     .ptc-btn:hover { background:#4A7A2F; }
+    .ptc-atc {
+      width:100%; display:block; padding:11px 16px; background:#649642; color:#fff;
+      border:none; border-radius:9px; font-size:0.83rem; font-weight:700;
+      cursor:pointer; transition:background 0.2s; text-align:center;
+    }
+    .ptc-atc:hover { background:#5a873b; }
     @media(max-width:960px){ .ptg{grid-template-columns:repeat(2,1fr);} .ptg .ptc,.ptg .ptc:nth-child(4),.ptg .ptc:nth-child(5){grid-column:span 1;} }
     @media(max-width:600px){ .ptg{grid-template-columns:1fr;} .ptg .ptc,.ptg .ptc:nth-child(4),.ptg .ptc:nth-child(5){grid-column:span 1;} }
   </style>
@@ -466,7 +472,7 @@
       <div class="ptg">
 
         <!-- Immunity Boost -->
-        <a class='ptc ptc--immunity' href='/protocols/immunity-boost'>
+        <div class='ptc ptc--immunity' style='cursor:default;'>
           <div class="ptc-top">
             <div class="ptc-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -479,13 +485,14 @@
             <p class="ptc-desc">Daily immune support &amp; microbiome maintenance. The recommended starting point.</p>
             <div class="ptc-row">
               <div class="ptc-prices"><span class="ptc-price">$44.99</span></div>
-              <span class="ptc-btn">View Details →</span>
+              <a href='/protocols/immunity-boost' class="ptc-btn">View Details →</a>
             </div>
+            <button class="btn-add-to-cart ptc-atc" data-variant-id="gid://shopify/ProductVariant/40129020035138" data-title="Immunity Boost" data-price="44.99" data-image="images/tundrex-1-1.png" style="margin-top:12px;">Add to Cart</button>
           </div>
-        </a>
+        </div>
 
         <!-- Microbiome Recovery -->
-        <a class='ptc ptc--microbiome' href='/protocols/microbiome-recovery'>
+        <div class='ptc ptc--microbiome' style='cursor:default;'>
           <div class="ptc-top">
             <div class="ptc-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
@@ -499,13 +506,14 @@
             <p class="ptc-desc">Intensive gut restoration after antibiotics, illness, or disruption — large intestine coverage.</p>
             <div class="ptc-row">
               <div class="ptc-prices"><span class="ptc-price">$119.97</span> <span class="ptc-old">$134.97</span></div>
-              <span class="ptc-btn">View Details →</span>
+              <a href='/protocols/microbiome-recovery' class="ptc-btn">View Details →</a>
             </div>
+            <button class="btn-add-to-cart ptc-atc" data-variant-id="gid://shopify/ProductVariant/40127984435266" data-title="Microbiome Recovery" data-price="119.97" data-image="images/tundrex-1-1.png" style="margin-top:12px;">Add to Cart</button>
           </div>
-        </a>
+        </div>
 
         <!-- Supplement Your Recovery -->
-        <a class='ptc ptc--supplement' href='/protocols/supplement-your-recovery'>
+        <div class='ptc ptc--supplement' style='cursor:default;'>
           <div class="ptc-top">
             <div class="ptc-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
@@ -519,13 +527,14 @@
             <p class="ptc-desc">Deeper restoration with an extended 15-day phase followed by large intestine support.</p>
             <div class="ptc-row">
               <div class="ptc-prices"><span class="ptc-price">$164.96</span> <span class="ptc-old">$179.96</span></div>
-              <span class="ptc-btn">View Details →</span>
+              <a href='/protocols/supplement-your-recovery' class="ptc-btn">View Details →</a>
             </div>
+            <button class="btn-add-to-cart ptc-atc" data-variant-id="gid://shopify/ProductVariant/40129021640770" data-title="Supplement Your Recovery" data-price="164.96" data-image="images/tundrex-1-1.png" style="margin-top:12px;">Add to Cart</button>
           </div>
-        </a>
+        </div>
 
         <!-- Return to Well-Being -->
-        <a class='ptc ptc--wellbeing' href='/protocols/return-to-well-being'>
+        <div class='ptc ptc--wellbeing' style='cursor:default;'>
           <div class="ptc-top">
             <div class="ptc-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
@@ -539,13 +548,14 @@
             <p class="ptc-desc">Full-spectrum microbiome restoration using all 3 Tundrex products. Complete digestive tract coverage.</p>
             <div class="ptc-row">
               <div class="ptc-prices"><span class="ptc-price">$199.95</span> <span class="ptc-old">$224.95</span></div>
-              <span class="ptc-btn">View Details →</span>
+              <a href='/protocols/return-to-well-being' class="ptc-btn">View Details →</a>
             </div>
+            <button class="btn-add-to-cart ptc-atc" data-variant-id="gid://shopify/ProductVariant/40129024196674" data-title="Return to Well-Being" data-price="199.95" data-image="images/tundrex-1-1.png" style="margin-top:12px;">Add to Cart</button>
           </div>
-        </a>
+        </div>
 
         <!-- Protocol To Support GIT Treatment -->
-        <a class='ptc ptc--git' href='/protocols/git-treatment'>
+        <div class='ptc ptc--git' style='cursor:default;'>
           <div class="ptc-top">
             <div class="ptc-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(125,196,85,0.95)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
@@ -559,10 +569,11 @@
             <p class="ptc-desc">The most intensive protocol — extended 25-day phase for complete GI restoration.</p>
             <div class="ptc-row">
               <div class="ptc-prices"><span class="ptc-price">$279.93</span> <span class="ptc-old">$314.93</span></div>
-              <span class="ptc-btn">View Details →</span>
+              <a href='/protocols/git-treatment' class="ptc-btn">View Details →</a>
             </div>
+            <button class="btn-add-to-cart ptc-atc" data-variant-id="gid://shopify/ProductVariant/40129027047490" data-title="GIT Treatment Protocol" data-price="279.93" data-image="images/tundrex-1-1.png" style="margin-top:12px;">Add to Cart</button>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
