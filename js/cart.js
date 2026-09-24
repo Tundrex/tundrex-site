@@ -139,7 +139,13 @@
           if (result && result.cart && result.cart.checkoutUrl) {
             self.cartId = result.cart.id;
             self._save();
-            window.location.href = result.cart.checkoutUrl;
+            /* Shopify returns checkoutUrl on the custom domain (tundrex.co)
+               but tundrex.co points to Netlify, not Shopify — so rewrite
+               the URL to go through the .myshopify.com domain instead. */
+            var url = result.cart.checkoutUrl.replace(
+              'https://tundrex.co/', 'https://tundrex.myshopify.com/'
+            );
+            window.location.href = url;
           } else {
             var errs = result && result.userErrors && result.userErrors.length
               ? result.userErrors.map(function (e) { return e.message; }).join(', ')
