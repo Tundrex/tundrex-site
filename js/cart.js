@@ -119,7 +119,11 @@
       return this.items.reduce(function (s, i) { return s + i.price * i.quantity; }, 0);
     },
 
-    /* ── Checkout via Shopify Cart API ── */
+    /* ── Checkout via Shopify session cart ── */
+    /* Instead of the Storefront Cart API (whose checkoutUrl points to tundrex.co
+       which 404s on Netlify), we use Shopify's AJAX /cart/add.js endpoint to
+       build a session cart on .myshopify.com, then redirect to /checkout.
+       Shopify routes to shop.app checkout — no domain conflict. */
     checkout: function () {
       var self = this;
       if (this.items.length === 0) return;
@@ -127,39 +131,48 @@
       var btn = document.getElementById('tundrex-checkout-btn');
       if (btn) { btn.disabled = true; btn.classList.add('loading'); btn.textContent = ''; }
 
-      var lines = this.items.map(function (item) {
-        return { merchandiseId: item.variantId, quantity: item.quantity };
-      });
-
-      var mutation = '\n        mutation cartCreate($input: CartInput!) {\n          cartCreate(input: $input) {\n            cart {\n              id\n              checkoutUrl\n            }\n            userErrors {\n              field\n              message\n            }\n          }\n        }\n      ';
-
-      gql(mutation, { input: { lines: lines } })
-        .then(function (data) {
-          var result = data && data.data && data.data.cartCreate;
-          if (result && result.cart && result.cart.checkoutUrl) {
-            self.cartId = result.cart.id;
-            self._save();
-            /* Shopify returns checkoutUrl on the custom domain (tundrex.co)
-               but tundrex.co points to Netlify, not Shopify — so rewrite
-               the URL to go through the .myshopify.com domain instead. */
-            var url = result.cart.checkoutUrl.replace(
-              'https://tundrex.co/', 'https://tundrex.myshopify.com/'
-            );
-            window.location.href = url;
-          } else {
-            var errs = result && result.userErrors && result.userErrors.length
-              ? result.userErrors.map(function (e) { return e.message; }).join(', ')
-              : 'Unknown error';
-            console.error('Tundrex cart error:', errs);
-            if (btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = 'Checkout'; }
-            alert('Checkout failed: ' + errs + '. Please try again.');
-          }
-        })
-        .catch(function (err) {
-          console.error('Tundrex cart API error:', err);
-          if (btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = 'Checkout'; }
-          alert('Network error. Please check your connection and try again.');
+      /* Step 1: Clear any existing Shopify session cart */
+      fetch('https://' + SHOPIFY_DOMAIN + '/cart/clear.js', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(function () {
+        /* Step 2: Add all items to Shopify's session cart */
+        var items = self.items.map(function (item) {
+          /* Extract numeric variant ID from GID */
+          var numericId = item.variantId.replace(/\D+/g, '').slice(-15);
+          /* For known GIDs, map to numeric IDs */
+          var idMap = {
+            'gid://shopify/ProductVariant/15601486626882': 15601486626882,
+            'gid://shopify/ProductVariant/39689981132866': 39689981132866,
+            'gid://shopify/ProductVariant/39689989783618': 39689989783618
+          };
+          var id = idMap[item.variantId] || parseInt(numericId, 10);
+          return { id: id, quantity: item.quantity };
         });
+
+        return fetch('https://' + SHOPIFY_DOMAIN + '/cart/add.js', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: items })
+        });
+      })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Cart add failed: ' + response.status);
+        return response.json();
+      })
+      .then(function () {
+        /* Step 3: Redirect to Shopify checkout.
+           Shopify will 302 to shop.app/checkout/... which works. */
+        window.location.href = 'https://' + SHOPIFY_DOMAIN + '/checkout';
+      })
+      .catch(function (err) {
+        console.error('Tundrex checkout error:', err);
+        if (btn) { btn.disabled = false; btn.classList.remove('loading'); btn.textContent = 'Checkout'; }
+        alert('Checkout failed. Please try again.');
+      });
     },
 
     /* ── Drawer open / close ── */
