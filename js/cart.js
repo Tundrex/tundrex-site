@@ -149,8 +149,11 @@
                gid://shopify/Cart/TOKEN?key=xxx -> TOKEN */
             var gid = result.cart.id;
             var token = gid.split('/').pop().split('?')[0];
-            /* Redirect to shop.app checkout (bypasses tundrex.co domain conflict) */
-            window.location.href = 'https://shop.app/checkout/' + SHOP_ID + '/cn/' + token + '/en-us';
+            /* Redirect to Shopify checkout on .myshopify.com.
+               Using /checkouts/cn/ path with skip_shop_pay & edge_redirect params
+               prevents Shopify from redirecting to the primary domain (tundrex.co)
+               which would 404 on Netlify. */
+            window.location.href = 'https://' + SHOPIFY_DOMAIN + '/checkouts/cn/' + token + '/en-us?auto_redirect=false&edge_redirect=true&skip_shop_pay=true';
           } else {
             var errs = result && result.userErrors && result.userErrors.length
               ? result.userErrors.map(function (e) { return e.message; }).join(', ')
