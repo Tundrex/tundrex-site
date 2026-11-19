@@ -83,6 +83,17 @@
       this._updateBadge();
       this._showToast('Added to cart!');
       this.openDrawer();
+
+      /* Meta Pixel – AddToCart event */
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', {
+          content_name: title,
+          content_ids: [variantId],
+          content_type: 'product',
+          value: parseFloat(price) * quantity,
+          currency: 'USD'
+        });
+      }
     },
 
     removeItem: function (variantId) {

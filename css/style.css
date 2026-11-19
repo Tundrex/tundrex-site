@@ -3136,3 +3136,33 @@ body::before {
     flex: 0 0 100%;
   }
 }
+
+/* ===================== PROMO BANNER ===================== */
+.promo-banner {
+  background: linear-gradient(135deg, #1a3a0a 0%, #2d5016 50%, #1a3a0a 100%);
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+}
+.promo-banner strong {
+  color: #d4af37;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.promo-banner a {
+  color: #d4af37;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.promo-banner a:hover {
+  color: #e6c44d;
+}
