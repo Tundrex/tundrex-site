@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1776408770139048');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1776408770139048&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fiber and Your Microbiome: Prebiotics, SCFAs, and Gut Resilience — Tundrex Blog</title>
@@ -243,7 +260,7 @@
     <div style="max-width:560px;margin:0 auto;">
       <h2 style="font-family:var(--font-serif,'Playfair Display',serif);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;color:#fff;margin:0 0 16px;">Join the Tundrex Community</h2>
       <p style="font-family:var(--font-sans,'DM Sans',sans-serif);font-size:1rem;color:rgba(255,255,255,0.75);line-height:1.6;margin:0 0 32px;">Get exclusive gut health tips, protocol guides, new product launches, and special offers — delivered straight to your inbox.</p>
-      <form id="newsletterForm" name="newsletter" method="POST" data-netlify="true" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:stretch;">
+      <form id='newsletterForm' method='POST' name='newsletter' data-netlify='true' style='display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:stretch;'>
         <input type="hidden" name="form-name" value="newsletter" />
         <input type="email" name="email" placeholder="Your email address" required
           style="flex:1 1 260px;min-width:0;padding:14px 18px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-family:var(--font-sans,'DM Sans',sans-serif);font-size:0.95rem;outline:none;transition:border-color 0.2s;" />
@@ -287,19 +304,19 @@
       <div class="footer-col">
         <h4>Products</h4>
         <ul>
-          <li><a href="../products/tundrex-1-1.html">Tundrex 1.1</a></li>
-          <li><a href="../products/tundrex-3.html">Tundrex 3</a></li>
-          <li><a href="../products/tundrex-4.html">Tundrex 4</a></li>
+          <li><a href='/products/tundrex-1-1'>Tundrex 1.1</a></li>
+          <li><a href='/products/tundrex-3'>Tundrex 3</a></li>
+          <li><a href='/products/tundrex-4'>Tundrex 4</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Protocols</h4>
         <ul>
-          <li><a href="../protocols/immunity-boost.html">Immunity Boost</a></li>
-          <li><a href="../protocols/microbiome-recovery.html">Microbiome Recovery</a></li>
-          <li><a href="../protocols/supplement-your-recovery.html">Supplement Your Recovery</a></li>
-          <li><a href="../protocols/return-to-well-being.html">Return to Well-Being</a></li>
-          <li><a href="../protocols/git-treatment.html">GIT Treatment</a></li>
+          <li><a href='/protocols/immunity-boost'>Immunity Boost</a></li>
+          <li><a href='/protocols/microbiome-recovery'>Microbiome Recovery</a></li>
+          <li><a href='/protocols/supplement-your-recovery'>Supplement Your Recovery</a></li>
+          <li><a href='/protocols/return-to-well-being'>Return to Well-Being</a></li>
+          <li><a href='/protocols/git-treatment'>GIT Treatment</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -316,8 +333,10 @@
       <p><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Use</a></p>
     </div>
   </div>
-  </footer>
+      <p style="font-size:0.55rem;color:rgba(255,255,255,.15);margin-top:16px;text-align:center;letter-spacing:0.5px">Made by Joe Narke · <a href="https://www.joenarke.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,.15);text-decoration:none">www.joenarke.com</a></p>
+</footer>
 
   <script src="../js/main.js"></script>
 </body>
 </html>
+
